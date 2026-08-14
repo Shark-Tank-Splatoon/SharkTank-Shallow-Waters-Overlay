@@ -1,0 +1,35 @@
+{
+    "name": "test-bundle",
+    "version": "0.0.0",
+    "compatibleDashboardVersion": "~4.21.0",
+    "compatibleGameVersions": [
+        "SPLATOON_3"
+    ],
+    "description": "",
+    "author": {
+        "name": "polonbear",
+        "email": "polon@polonbear.com"
+    },
+    "files": [
+        "graphics"
+    ],
+    "keywords": [
+        "",
+        "nodecg-bundle"
+    ],
+    "nodecg": {
+        "compatibleRange": "^1.7.0 || ^2.0.0",
+        "graphics": [
+            {
+                "file": "comm-break.html",
+                "width": 1920,
+                "height": 1080
+            }
+        ]
+    },
+    "devDependencies": {
+        "ts-nodecg": "^0.3.1"
+    },
+    "repository": "https://github.com/nodecg/nodecg.git",
+    "license": "MIT"
+}
