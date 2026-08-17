@@ -1,0 +1,12 @@
+body {
+    margin: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    font-family: "Arial", sans-serif;
+}
+.flex-align-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
