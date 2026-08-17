@@ -1,7 +1,7 @@
 .pond-background {
     position: absolute;
-    width: stretch;
-    height: stretch;
+    width: inherit;
+    height: inherit;
     background-image: url("../../comm-break/cm-background.png");
     background-size: 1920px 1080px;
     background-position-x: 0px;
