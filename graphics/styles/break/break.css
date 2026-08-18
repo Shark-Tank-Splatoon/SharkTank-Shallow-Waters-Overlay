@@ -5,14 +5,16 @@ body {
 }
 
 .pond-background {
-    position: absolute;
+    position: relative;
     width: 1920px;
     height: 1080px;
+    z-index: 1;
 }
+
 .pond-background > .pond-background-image {
     position: absolute;
-    width: inherit;
-    height: inherit;
+    inset: 0;
+    z-index: 1;
     background-image: url("../../comm-break/cm-background.png");
     background-size: 1920px 1080px;
     background-position-x: 0px;
