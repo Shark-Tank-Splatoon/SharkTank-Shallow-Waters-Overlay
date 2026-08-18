@@ -1,4 +1,15 @@
+body {
+    background: radial-gradient(
+        red
+    );
+}
+
 .pond-background {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+}
+.pond-background > .pond-background-image {
     position: absolute;
     width: inherit;
     height: inherit;
