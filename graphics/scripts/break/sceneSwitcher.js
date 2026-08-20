@@ -64,3 +64,12 @@ function showMainScene() {
         duration: 0.5
     } ), '-=0.3')
 }
+
+function showTeams() {
+    toggleExpandBackground(false);
+    sceneT1.add(gsap.to('.scene-teams > .scene-content', {
+        x: 0,
+        opacity: 1,
+        duration: 0.5
+    } ), '-=0.3')
+}

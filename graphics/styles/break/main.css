@@ -1,3 +1,8 @@
+
+/* 
+    Sets up the main Screen for the Break Scene. Global configurations for all the different Break Scenes are set here. This includes the Team Display, Map Display, and Commentator/Intermission Screen.
+*/
+
 .scene.main-scene {
     display: flex;
     flex-direction: row;

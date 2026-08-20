@@ -1,0 +1,3 @@
+/*
+This will eventually house all the background related functions for the break overlay.
+*/
