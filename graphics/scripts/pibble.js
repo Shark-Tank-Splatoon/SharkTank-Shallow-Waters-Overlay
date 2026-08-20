@@ -1,4 +1,4 @@
-PibbleMode.on('change', newValue => {
+PibbleModeEnabled.on('change', newValue => {
     if (newValue) {
         enablePibble();
     } else {

@@ -1,4 +1,5 @@
-const PibbleModeEnabled = nodecg.Replicant('PibbleModeEnabled', DASHBOARD_BUNDLE_NAME);
+const DASHBOARD_BUNDLE_NAME = 'ipl-overlay-controls';
+const PibbleModeEnabled = nodecg.Replicant('PibbleModeEnabled', {defaultValue: false});
 const PibbleModeToggle = document.getElementById('pibble-mode-toggle');
 
 PibbleModeToggle.addEventListener('change', e => {
