@@ -11,6 +11,14 @@ body {
     overflow: hidden;
     font-family: "Arial", sans-serif;
 }
+#pibble-image {
+    position: fixed;
+    inset: 0;
+    width: 100vw;
+    height: 100vh;
+    object-fit: contain;
+    z-index: 1000;
+}
 .flex-align-center {
     display: flex;
     justify-content: center;

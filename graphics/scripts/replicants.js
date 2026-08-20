@@ -6,3 +6,4 @@ const assetPaths = nodecg.Replicant('assetPaths', DASHBOARD_BUNDLE_NAME);
 const localeInfo = nodecg.Replicant('localeInfo', DASHBOARD_BUNDLE_NAME);
 const runtimeConfig = nodecg.Replicant('runtimeConfig', DASHBOARD_BUNDLE_NAME);
 const bracketData = nodecg.Replicant('bracketData', DASHBOARD_BUNDLE_NAME);
+const PibbleMode = nodecg.Replicant('PibbleMode', DASHBOARD_BUNDLE_NAME);
