@@ -11,7 +11,10 @@
         "email": "polon@polonbear.com"
     },
     "files": [
-        "graphics"
+        "graphics",
+        "dashboard",
+        "extension.js",
+        "extension"
     ],
     "keywords": [
         "",
@@ -25,7 +28,22 @@
                 "width": 1920,
                 "height": 1080
             }
+        ],
+        "dashboardPanels": [
+            {
+                "name": "SharkTankSettings",
+                "title": "Shark Tank Settings",
+                "width": 2,
+                "file": "sharktankdashboard.html",
+                "workspace": "sharktank",
+                "headerColor": "#1E90FF"
+            }
         ]
+    },
+    "dependencies": {
+        "@tourneyview/renderer": "0.8.0",
+        "gsap": "3.13.0",
+        "fitted-text": "^1.0.0"
     },
     "devDependencies": {
         "ts-nodecg": "^0.3.1"
