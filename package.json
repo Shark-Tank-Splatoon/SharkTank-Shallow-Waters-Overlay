@@ -12,9 +12,7 @@
     },
     "files": [
         "graphics",
-        "dashboard",
-        "extension.js",
-        "extension"
+        "dashboard"
     ],
     "keywords": [
         "",

@@ -1,0 +1,24 @@
+.teams-background {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+}
+
+.teams-background > .teams-background-image {
+  position: absolute;
+  inset: 0;
+  background-image: url("../../rosters/rosters bg.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.teams-background > .teams-roster {
+  position: absolute;
+  inset: 0;
+  background-image: url("../../rosters/rosters elements.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
