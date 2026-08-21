@@ -16,15 +16,22 @@
     <div class="pond-background">
         <div class="pond-background-image"></div>
     </div>
-    <div class="teams-background">
-        <div class="teams-background-image"></div>
-        <div class="teams-roster"></div>
+    <div class="scene teams-scene">
+        <div class="scene-content">
+            <div class="teams-background">
+                <div class="teams-background-image"></div>
+                <div class="teams-roster"></div>
+            </div>
+        </div>
     </div>
     <img id="pibble-image" src="comm-break/pibble%20(MANDATORY).jpg" alt="" hidden>
 
 <!-- Here is where u link the scripts -->
+<script src="../node_modules/gsap/dist/gsap.min.js"></script>
 <script src="scripts/globals.js"></script>
 <script src="scripts/replicants.js"></script>
+<script src="scripts/break/background.js"></script>
+<script src="scripts/break/sceneSwitcher.js"></script>
 <script src="scripts/pibble.js"></script>
 </body>
 

@@ -3,7 +3,59 @@ JS Script for switching between scenes in the break overlay. Inspired by IPL's L
 This script is used to switch between the different scenes in the break overlay.
 It listens for changes in the "scene" replicant and updates the visibility of the scenes accordingly.
 */
-const sceneT1 = gsap.timeline();
+function setSceneVisibility(sceneSelector, visible) {
+    const sceneContent = document.querySelector(`${sceneSelector} > .scene-content`);
+
+    if (!sceneContent) return;
+
+    gsap.set(sceneContent, {
+        x: visible ? 0 : 1920,
+        opacity: visible ? 1 : 0
+    });
+}
+
+function hideMainScene() {
+    setSceneVisibility('.main-scene', false);
+}
+
+function hideTeams() {
+    setSceneVisibility('.teams-scene', false);
+}
+
+function hideStages() {
+    setSceneVisibility('.stages-scene', false);
+}
+
+function showScene(sceneSelector) {
+    toggleExpandBackground(false);
+    gsap.to(`${sceneSelector} > .scene-content`, {
+        x: 0,
+        opacity: 1,
+        duration: 0.5
+    });
+}
+
+function showMainScene() {
+    showScene('.main-scene');
+}
+
+function showTeams() {
+    toggleExpandBackground(false);
+    gsap.set('.teams-scene > .scene-content', {
+        x: 0,
+        opacity: 1
+    });
+    gsap.fromTo('.teams-roster', {
+        opacity: 0
+    }, {
+        opacity: 1,
+        duration: 0.5
+    });
+}
+
+function showStages() {
+    showScene('.stages-scene');
+}
 
 activeBreakScene.on('change', (newValue, oldValue) => {
     if (!oldValue) {
@@ -40,7 +92,7 @@ activeBreakScene.on('change', (newValue, oldValue) => {
     }
     switch (newValue) {
         case 'main':
-            hideInfoBar('-=0.6');
+            hideInfoBar();
             setInfoSwitchAnim();
             showMainScene();
             break;
@@ -56,20 +108,3 @@ activeBreakScene.on('change', (newValue, oldValue) => {
     }
 }); 
 
-function showMainScene() {
-    toggleExpandBackground(false);
-    sceneT1.add(gsap.to('.scene-main > .scene-content', {
-        x: 0,
-        opacity: 1,
-        duration: 0.5
-    } ), '-=0.3')
-}
-
-function showTeams() {
-    toggleExpandBackground(false);
-    sceneT1.add(gsap.to('.scene-teams > .scene-content', {
-        x: 0,
-        opacity: 1,
-        duration: 0.5
-    } ), '-=0.3')
-}

@@ -40,8 +40,8 @@
     },
     "dependencies": {
         "@tourneyview/renderer": "0.8.0",
-        "gsap": "3.13.0",
-        "fitted-text": "^1.0.0"
+        "fitted-text": "^1.0.0",
+        "gsap": "^3.13.0"
     },
     "devDependencies": {
         "ts-nodecg": "^0.3.1"

@@ -1,24 +1,72 @@
+.scene.teams-scene {
+  position: absolute;
+  inset: 0;
+  align-items: unset;
+  z-index: 2;
+}
+
+.scene.teams-scene > .scene-content {
+  position: absolute;
+  inset: 0;
+  width: 1920px;
+  height: 1080px;
+  overflow: hidden;
+}
+
 .teams-background {
-    position: absolute;
-    inset: 0;
-    width: 1920px;
-    height: 1080px;
-}
-
-.teams-background > .teams-background-image {
   position: absolute;
   inset: 0;
-  background-image: url("../../rosters/rosters bg.png");
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
+  width: 1920px;
+  height: 1080px;
+  z-index: 1;
 }
 
-.teams-background > .teams-roster {
+.teams-background-image,
+.teams-roster {
   position: absolute;
   inset: 0;
-  background-image: url("../../rosters/rosters elements.png");
-  background-size: cover;
-  background-position: center;
+  width: 1920px;
+  height: 1080px;
   background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 1920px 1080px;
+}
+
+.teams-background-image {
+  z-index: 1;
+  background-image: url("../../rosters/rosters%20bg.png");
+}
+
+.teams-roster {
+  z-index: 2;
+  background-image: url("../../rosters/rosters%20elements.png");
+}
+
+.teams-roster::before,
+.teams-roster::after {
+  position: absolute;
+  inset: 0;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-size: 1920px 1080px;
+  content: "";
+}
+
+.teams-roster::before {
+  z-index: 1;
+  background-image: url("../../rosters/rosters_pfp%20overlay.png");
+}
+
+.teams-roster::after {
+  z-index: 2;
+  background-image: url("../../rosters/rosters_pfp%20overlay%20alt.png");
+  opacity: 0;
+}
+
+.teams-roster.use-alt::before {
+  opacity: 0;
+}
+
+.teams-roster.use-alt::after {
+  opacity: 1;
 }
