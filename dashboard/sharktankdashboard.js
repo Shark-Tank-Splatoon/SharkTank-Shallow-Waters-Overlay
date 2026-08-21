@@ -1,4 +1,3 @@
-const DASHBOARD_BUNDLE_NAME = 'ipl-overlay-controls';
 const PibbleModeEnabled = nodecg.Replicant('PibbleModeEnabled', {defaultValue: false});
 const PibbleModeToggle = document.getElementById('pibble-mode-toggle');
 
