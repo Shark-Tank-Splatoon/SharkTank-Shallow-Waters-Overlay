@@ -10,46 +10,104 @@
     <link rel="stylesheet" href="styles/globals.css">
     <link rel="stylesheet" href="styles/break/break.css">
     <link rel="stylesheet" href="styles/break/teams.css">
+    <link rel="stylesheet" href="styles/break/stages.css">
 </head>
 
 <body>
-    <div class="scene main-scene">
-        <div class="scene-content">
-            <div class="pond-background">
-                <div class="pond-background-image"></div>
-            </div>
+<div class="pond-background">
+    <div class="pond"></div>
+</div>
+
+<!-- Teams Scene -->
+<div class="scene teams-scene">
+    <div class="scene-content">
+        <div class="teams-background">
+            <div class="teams-background-image"></div>
+            <div class="teams-roster"></div>
+            <div class="active-round-team-a-logo" data-active-round-team-a-logo></div>
+            <div class="active-round-team-b-logo" data-active-round-team-b-logo></div>
         </div>
-    </div>
-    <div class="scene teams-scene">
-        <div class="scene-content">
-            <div class="teams-background">
-                <div class="teams-background-image"></div>
-                <div class="teams-roster"></div>
-                <div class="active-round-team-a-logo" data-active-round-team-a-logo></div>
-                <div class="active-round-team-b-logo" data-active-round-team-b-logo></div>
-            </div>
-            <div class="active-round-info" aria-live="polite">
-                <div class="active-round-teams">
-                    <div class="active-round-team active-round-team-a">
-                        <span data-active-round-team-a></span>
-                        <div class="active-round-team-a-roster" data-active-round-team-a-roster></div>
-                    </div>
-                    <div class="active-round-team active-round-team-b">
-                        <div class="active-round-team-b-roster" data-active-round-team-b-roster></div>
-                        <span data-active-round-team-b></span>
-                    </div>
+        <div class="active-round-info" aria-live="polite">
+            <div class="active-round-teams">
+                    
+                <div class="active-round-team active-round-team-a">
+                    <span data-active-round-team-a></span>
+                    <div class="active-round-team-a-roster" data-active-round-team-a-roster></div>
                 </div>
-                <div class="active-round-games" data-active-round-games></div>
+                <div class="active-round-team active-round-team-b">
+                    <div class="active-round-team-b-roster" data-active-round-team-b-roster></div>
+                    <span data-active-round-team-b></span>
+                </div>
             </div>
+            <div class="active-round-games" data-active-round-games></div>
         </div>
     </div>
-    <img id="pibble-image" src="comm-break/pibble%20(MANDATORY).jpg" alt="" hidden>
+</div>
+
+<!-- Maps Scene -->
+<div class="scene stages-scene">
+    <div class="scene-content">
+        <div class="stages-scoreboard" aria-live="polite">
+            <fitted-text id="team-a-name-scoreboard"></fitted-text>
+            <div class="scores">
+                <fitted-text data-stage-score-a></fitted-text>
+                <span>-</span>
+                <fitted-text data-stage-score-b></fitted-text>
+            </div>
+            <fitted-text id="team-b-name-scoreboard"></fitted-text>
+        </div>
+
+        <div class="stages-grid bo5" data-stages-grid>
+            <div class="stage" data-stage data-stage-index="0">
+                <div class="stage-winner-image" data-stage-winner-image></div>
+                <div class="stage-info">
+                    <div class="stage-mode" data-stage-mode></div>
+                    <div class="stage-name" data-stage-name></div>
+                </div>
+            </div>
+            <div class="stage" data-stage data-stage-index="1">
+                <div class="stage-winner-image" data-stage-winner-image></div>
+                <div class="stage-info">
+                    <div class="stage-mode" data-stage-mode></div>
+                    <div class="stage-name" data-stage-name></div>
+                </div>
+            </div>
+            <div class="stage" data-stage data-stage-index="2">
+                <div class="stage-winner-image" data-stage-winner-image></div>
+                <div class="stage-info">
+                    <div class="stage-mode" data-stage-mode></div>
+                    <div class="stage-name" data-stage-name></div>
+                </div>
+            </div>
+            <div class="stage" data-stage data-stage-index="3">
+                <div class="stage-winner-image" data-stage-winner-image></div>
+                <div class="stage-info">
+                    <div class="stage-mode" data-stage-mode></div>
+                    <div class="stage-name" data-stage-name></div>
+                </div>
+            </div>
+            <div class="stage" data-stage data-stage-index="4">
+                <div class="stage-winner-image" data-stage-winner-image></div>
+                <div class="stage-info">
+                    <div class="stage-mode" data-stage-mode></div>
+                    <div class="stage-name" data-stage-name></div>
+                </div>
+            </div>
+        </div>
+        <div class="stages-frame" data-stages-frame></div>
+        <div class="stages-elements" data-stages-elements></div>
+    </div>
+</div>
+
+
+<img id="pibble-image" src="comm-break/pibble%20(MANDATORY).jpg" alt="" hidden>
 
 <!-- Here is where u link the scripts -->
 <script src="../node_modules/gsap/dist/gsap.min.js"></script>
 <script src="scripts/globals.js"></script>
 <script src="scripts/replicants.js"></script>
 <script src="scripts/break/break.js"></script>
+<script src="scripts/break/stages.js"></script>
 <script src="scripts/break/sceneSwitcher.js"></script>
 <script src="scripts/pibble.js"></script>
 </body>

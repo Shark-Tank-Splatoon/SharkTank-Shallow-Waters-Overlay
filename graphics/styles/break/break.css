@@ -8,21 +8,6 @@ body {
     background: #000;
 }
 
-.scene.main-scene {
-    position: absolute;
-    inset: 0;
-    align-items: unset;
-    z-index: 1;
-}
-
-.scene.main-scene > .scene-content {
-    position: absolute;
-    inset: 0;
-    width: 1920px;
-    height: 1080px;
-    overflow: hidden;
-}
-
 .pond-background {
     position: absolute;
     inset: 0;
@@ -31,7 +16,7 @@ body {
     overflow: hidden;
     z-index: 1;
 }
-
+/*
 .pond-background-image,
 .pond-background-image::before,
 .pond-background-image::after {
@@ -44,32 +29,15 @@ body {
     content: "";
     pointer-events: none;
 }
-
-.pond-background-image {
+*/
+.pond-background > .pond {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
     z-index: 1;
     background-image: url("../../comm-break/cm-background.png");
+    background-repeat: no-repeat;
+    background-position: 0 0;
     background-size: 1920px 1080px;
-}
-
-.pond-background-image::before {
-    z-index: 1;
-    background-image:
-        url("../../comm-break/cm-background2.png"),
-        url("../../comm-break/updated%20comm%20break.png");
-    background-size:
-        1920px 1080px,
-        1920px 1080px;
-}
-
-.pond-background-image::after {
-    z-index: 2;
-    background-image:
-        url("../../comm-break/commentator-cover.png"),
-        url("../../comm-break/240%20x%20240%20comm%20pfp%20mask.png");
-    background-position:
-        0 0,
-        center center;
-    background-size:
-        1920px 1080px,
-        240px 240px;
 }

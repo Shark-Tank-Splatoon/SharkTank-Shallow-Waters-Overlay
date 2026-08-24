@@ -1,6 +1,6 @@
 
 /* 
-    Sets up the main Screen for the Break Scene. Global configurations for all the different Break Scenes are set here. This includes the Team Display, Map Display, and Commentator/Intermission Screen.
+    Sets up the main Screen for the Break Scene.
 */
 
 .scene.main-scene {
@@ -18,4 +18,17 @@
 .scene.main-scene .scene-content img{
     width: 100%;
     position: absolute;
+}
+
+.pond-background-image::after {
+    z-index: 2;
+    background-image:
+        url("../../comm-break/commentator-cover.png"),
+        url("../../comm-break/240%20x%20240%20comm%20pfp%20mask.png");
+    background-position:
+        0 0,
+        center center;
+    background-size:
+        1920px 1080px,
+        240px 240px;
 }

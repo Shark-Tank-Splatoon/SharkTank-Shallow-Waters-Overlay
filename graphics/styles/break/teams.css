@@ -15,7 +15,7 @@
   overflow: hidden;
 }
 
-.teams-background {
+.scene.teams-scene > .scene-content > .teams-background {
   position: absolute;
   inset: 0;
   width: 1920px;
@@ -23,8 +23,8 @@
   z-index: 1;
 }
 
-.teams-background-image,
-.teams-roster {
+.scene.teams-scene > .scene-content > .teams-background > .teams-background-image,
+.scene.teams-scene > .scene-content > .teams-background > .teams-roster {
   position: absolute;
   inset: 0;
   width: 1920px;
@@ -34,17 +34,17 @@
   background-size: 1920px 1080px;
 }
 
-.teams-background-image {
+.scene.teams-scene > .scene-content > .teams-background > .teams-background-image {
   z-index: 1;
   background-image: url("../../rosters/rosters%20bg.png");
 }
 
-.teams-roster {
+.scene.teams-scene > .scene-content > .teams-background > .teams-roster {
   z-index: 2;
   background-image: url("../../rosters/rosters%20elements.png");
 }
 
-.active-round-info {
+.scene.teams-scene > .scene-content > .active-round-info {
   position: absolute;
   inset: 0;
   z-index: 3;
@@ -69,13 +69,13 @@
   white-space: nowrap;
 }
 */
-.active-round-teams {
+.scene.teams-scene > .scene-content > .active-round-info > .active-round-teams {
   position: absolute;
   inset: 0;
 }
 
 /* Container for Team Names */
-.active-round-team {
+.scene.teams-scene > .scene-content > .active-round-info > .active-round-teams > .active-round-team {
   position: absolute;
   top: 95px;
   width: 700px;
@@ -90,17 +90,17 @@
 }
 
 /* Positional Adjustment for the Team Names */
-.active-round-team-a {
+.scene.teams-scene > .scene-content > .active-round-info > .active-round-teams > .active-round-team-a {
   left: 60px;
   justify-content: flex-end;
 }
 
-.active-round-team-b {
+.scene.teams-scene > .scene-content > .active-round-info > .active-round-teams > .active-round-team-b {
   right: 60px;
   justify-content: flex-start;
 }
 
-.active-round-team > span {
+.scene.teams-scene > .scene-content > .active-round-info > .active-round-teams > .active-round-team > span {
   position: absolute;
   width: calc(100% - 48px);
   overflow: hidden;
@@ -110,8 +110,8 @@
 }
 
 /* Creates the container for the Player names */
-.active-round-team-a-roster,
-.active-round-team-b-roster {
+.scene.teams-scene > .scene-content > .active-round-info > .active-round-teams > .active-round-team-a > .active-round-team-a-roster,
+.scene.teams-scene > .scene-content > .active-round-info > .active-round-teams > .active-round-team-b > .active-round-team-b-roster {
   position: absolute;
   top: 175px;
   width: 550px;
@@ -122,23 +122,23 @@
 }
 
 /* Text allignment for player names */
-.active-round-team-a-roster {
+.scene.teams-scene > .scene-content > .active-round-info > .active-round-teams > .active-round-team-a > .active-round-team-a-roster {
   left: 75px;
   text-align: left;
 }
 
-.active-round-team-b-roster {
+.scene.teams-scene > .scene-content > .active-round-info > .active-round-teams > .active-round-team-b > .active-round-team-b-roster {
   left: 175px;
   text-align: left;
 }
 
-.active-round-team strong {
+.scene.teams-scene > .scene-content > .active-round-info > .active-round-teams > .active-round-team > strong {
   flex: 0 0 auto;
   font-size: 38px;
 }
 
 /* Shows Bo3, PA3 etc. */
-.active-round-games {
+.scene.teams-scene > .scene-content > .active-round-info > .active-round-games {
   position: absolute;
   top: 100px;
   left: 50%;
@@ -151,8 +151,8 @@
 }
 
 /*this were da graphics live */
-.teams-roster::before,
-.teams-roster::after {
+.scene.teams-scene > .scene-content > .teams-background > .teams-roster::before,
+.scene.teams-scene > .scene-content > .teams-background > .teams-roster::after {
   position: absolute;
   inset: 0;
   background-repeat: no-repeat;
@@ -161,8 +161,8 @@
   content: "";
 }
 
-.active-round-team-a-logo,
-.active-round-team-b-logo {
+.scene.teams-scene > .scene-content > .teams-background > .active-round-team-a-logo,
+.scene.teams-scene > .scene-content > .teams-background > .active-round-team-b-logo {
   position: absolute;
   width: 295px;
   height: 295px;
@@ -172,30 +172,30 @@
   z-index: 1;
   pointer-events: none;
 }
-.active-round-team-a-logo {
+.scene.teams-scene > .scene-content > .teams-background > .active-round-team-a-logo {
   top: 250px;
   left: 705px;
 }
-.active-round-team-b-logo {
+.scene.teams-scene > .scene-content > .teams-background > .active-round-team-b-logo {
   bottom: 170px;
   right: 715px;
 }
 
-.teams-roster::before {
+.scene.teams-scene > .scene-content > .teams-background > .teams-roster::before {
   z-index: 1;
   background-image: url("../../rosters/rosters_pfp%20overlay.png");
 }
 
-.teams-roster::after {
+.scene.teams-scene > .scene-content > .teams-background > .teams-roster::after {
   z-index: 2;
   background-image: url("../../rosters/rosters_pfp%20overlay%20alt.png");
   opacity: 0;
 }
 
-.teams-roster.use-alt::before {
+.scene.teams-scene > .scene-content > .teams-background > .teams-roster.use-alt::before {
   opacity: 0;
 }
 
-.teams-roster.use-alt::after {
+.scene.teams-scene > .scene-content > .teams-background > .teams-roster.use-alt::after {
   opacity: 1;
 }

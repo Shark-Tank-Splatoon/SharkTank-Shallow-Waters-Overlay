@@ -1,0 +1,152 @@
+.scene.stages-scene {
+    position: absolute;
+    inset: 0;
+    align-items: unset;
+    z-index: 2;
+}
+
+.scene.stages-scene > .scene-content {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: url("../../maps and modes (bo3-bo5)/maps%20bg.png") center / 1920px 1080px no-repeat;
+}
+
+.scene.stages-scene > .scene-content > .stages-grid {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 18px;
+    box-sizing: border-box;
+    padding: 230px 42px 190px;
+}
+
+.scene.stages-scene > .scene-content > .stages-grid.bo3 {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 70px;
+    padding-right: 220px;
+    padding-left: 220px;
+}
+
+.scene.stages-scene > .scene-content > .stages-grid > .stage {
+    position: relative;
+    min-width: 0;
+}
+
+.scene.stages-scene > .scene-content > .stages-grid > .stage > .stage-winner-image {
+    position: absolute;
+    top: 12px;
+    left: 50%;
+    z-index: 4;
+    width: 180px;
+    height: 180px;
+    transform: translateX(-50%);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 150px 150px;
+}
+
+.scene.stages-scene > .scene-content > .stages-grid > .stage > .stage-winner-image::after {
+    position: absolute;
+    inset: 0;
+    content: "";
+    pointer-events: none;
+    background: url("../../maps and modes (bo3-bo5)/pfp%20frame.png") center / 100% 100% no-repeat;
+}
+
+.scene.stages-scene > .scene-content > .stages-grid > .stage > .stage-info {
+    position: absolute;
+    right: 12px;
+    bottom: 18px;
+    left: 12px;
+    z-index: 6;
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 2px 3px #000;
+}
+
+.scene.stages-scene > .scene-content > .stages-grid > .stage > .stage-info > .stage-mode {
+    margin-bottom: 4px;
+    font-size: 22px;
+}
+
+.scene.stages-scene > .scene-content > .stages-grid > .stage > .stage-info.without-mode > .stage-mode {
+    display: none;
+}
+
+.scene.stages-scene > .scene-content > .stages-grid > .stage > .stage-info > .stage-name {
+    font-size: 28px;
+    font-weight: 700;
+    overflow-wrap: anywhere;
+}
+
+.scene.stages-scene > .scene-content > .stages-frame,
+.scene.stages-scene > .scene-content > .stages-elements {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1920px 1080px;
+}
+
+.scene.stages-scene > .scene-content > .stages-frame {
+    z-index: 3;
+}
+
+.scene.stages-scene > .scene-content > .stages-grid.bo3 ~ .stages-frame {
+    background-image: url("../../maps and modes (bo3-bo5)/bo3/bo3 map frames.png");
+}
+
+.scene.stages-scene > .scene-content > .stages-grid.bo5 ~ .stages-frame {
+    background-image: url("../../maps and modes (bo3-bo5)/bo5/bo5 mask image.png");
+}
+
+.scene.stages-scene > .scene-content > .stages-elements {
+    z-index: 5;
+    background-image: url("../../maps and modes (bo3-bo5)/bo3bo5%20elements%20.png");
+}
+
+.scene.stages-scene > .scene-content > .stages-scoreboard {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    z-index: 7;
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 1fr;
+    align-items: center;
+    width: 1000px;
+    height: 160px;
+    transform: translateX(-50%);
+    color: #fff;
+    text-align: center;
+    text-shadow: 0 2px 3px #000;
+    pointer-events: none;
+}
+
+.scene.stages-scene > .scene-content > .stages-scoreboard > .scores {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr 1fr;
+    align-items: center;
+    justify-items: center;
+    font-size: 42px;
+    font-weight: 700;
+}
+
+.scene.stages-scene > .scene-content > .stages-scoreboard > fitted-text {
+    margin: 0 10px;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.scene.stages-scene #team-a-name-scoreboard {
+    justify-self: end;
+}
+
+.scene.stages-scene #team-b-name-scoreboard {
+    justify-self: start;
+}
