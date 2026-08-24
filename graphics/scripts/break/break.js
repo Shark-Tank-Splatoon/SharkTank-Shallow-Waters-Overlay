@@ -35,9 +35,15 @@ function getPlayerNames(team) {
 	if (!Array.isArray(team.players)) return '';
 
 	return team.players
-		.map(player => player?.name || '')
+		.map(player => player?.inGameName?.name ?? player?.inGameName ?? player?.name ?? '')
 		.filter(Boolean)
 		.join('\n');
+}
+
+function setTeamLogo(selector, team){
+	const element = document.querySelector(selector);
+	if (!element) return;
+	element.style.backgroundImage = team.showLogo && team.logoUrl ? `url("${team.logoUrl}")` : 'none';
 }
 
 function setActiveRoundData(round) {
@@ -69,6 +75,9 @@ function setActiveRoundData(round) {
 	setText('[data-active-round-score-a]', String(teamA.score ?? 0));
 	setText('[data-active-round-score-b]', String(teamB.score ?? 0));
 	setText('[data-active-round-games]', getRoundFormatLabel(round));
+
+	setTeamLogo('[data-active-round-team-a-logo]', teamA);
+	setTeamLogo('[data-active-round-team-b-logo]', teamB);
 
 	teamsScene.style.setProperty('--team-a-color', teamA.color || 'transparent');
 	teamsScene.style.setProperty('--team-b-color', teamB.color || 'transparent');

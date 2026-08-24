@@ -161,6 +161,26 @@
   content: "";
 }
 
+.active-round-team-a-logo,
+.active-round-team-b-logo {
+  position: absolute;
+  width: 295px;
+  height: 295px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  z-index: 1;
+  pointer-events: none;
+}
+.active-round-team-a-logo {
+  top: 250px;
+  left: 705px;
+}
+.active-round-team-b-logo {
+  bottom: 170px;
+  right: 715px;
+}
+
 .teams-roster::before {
   z-index: 1;
   background-image: url("../../rosters/rosters_pfp%20overlay.png");
