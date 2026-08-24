@@ -3,6 +3,8 @@
   inset: 0;
   align-items: unset;
   z-index: 2;
+  --team-a-color: transparent;
+  --team-b-color: transparent;
 }
 
 .scene.teams-scene > .scene-content {
@@ -42,6 +44,113 @@
   background-image: url("../../rosters/rosters%20elements.png");
 }
 
+.active-round-info {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  color: #fff;
+  text-shadow: 0 2px 4px #000;
+  pointer-events: none;
+}
+/* This displays the Current round it is. Dont know how to use it so im leaving it commented out just incase its needed eventually
+
+.active-round-match {
+  position: absolute;
+  top: 57px;
+  left: 50%;
+  width: 360px;
+  min-height: 28px;
+  transform: translateX(-50%);
+  font-size: 26px;
+  font-weight: 600;
+  text-align: center;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+*/
+.active-round-teams {
+  position: absolute;
+  inset: 0;
+}
+
+/* Container for Team Names */
+.active-round-team {
+  position: absolute;
+  top: 95px;
+  width: 700px;
+  height: 90px;
+  display: flex;
+  align-items: normal;
+  gap: 24px;
+  min-width: 0;
+  padding: 0 24px;
+  font-size: 60px;
+  font-weight: 700;
+}
+
+/* Positional Adjustment for the Team Names */
+.active-round-team-a {
+  left: 60px;
+  justify-content: flex-end;
+}
+
+.active-round-team-b {
+  right: 60px;
+  justify-content: flex-start;
+}
+
+.active-round-team > span {
+  position: absolute;
+  width: calc(100% - 48px);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+}
+
+/* Creates the container for the Player names */
+.active-round-team-a-roster,
+.active-round-team-b-roster {
+  position: absolute;
+  top: 175px;
+  width: 550px;
+  font-size: 60px;
+  font-weight: 400;
+  line-height: 1.3;
+  white-space: pre-line;
+}
+
+/* Text allignment for player names */
+.active-round-team-a-roster {
+  left: 75px;
+  text-align: left;
+}
+
+.active-round-team-b-roster {
+  left: 175px;
+  text-align: left;
+}
+
+.active-round-team strong {
+  flex: 0 0 auto;
+  font-size: 38px;
+}
+
+/* Shows Bo3, PA3 etc. */
+.active-round-games {
+  position: absolute;
+  top: 100px;
+  left: 50%;
+  width: 270px;
+  min-height: 28px;
+  transform: translateX(-50%);
+  font-size: 60px;
+  font-weight: 600;
+  text-align: center;
+}
+
+/*this were da graphics live */
 .teams-roster::before,
 .teams-roster::after {
   position: absolute;
