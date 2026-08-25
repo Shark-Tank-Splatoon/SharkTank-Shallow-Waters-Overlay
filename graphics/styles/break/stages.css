@@ -20,21 +20,32 @@
     z-index: 2;
     display: grid;
     grid-template-columns: repeat(5, 1fr);
-    gap: 18px;
-    box-sizing: border-box;
-    padding: 230px 42px 190px;
+    grid-template-rows: 680px;
+    gap: 35px;
+    padding: 220px 32px 180px;
 }
 
 .scene.stages-scene > .scene-content > .stages-grid.bo3 {
     grid-template-columns: repeat(3, 1fr);
-    gap: 70px;
+    gap: 95px;
     padding-right: 220px;
     padding-left: 220px;
+    padding-top: 230px;
 }
 
 .scene.stages-scene > .scene-content > .stages-grid > .stage {
     position: relative;
     min-width: 0;
+}
+
+.scene.stages-scene > .scene-content > .stages-grid > .stage > .stage-map-image {
+    position: absolute;
+    inset: 0;
+    z-index: 1;
+    overflow: hidden;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .scene.stages-scene > .scene-content > .stages-grid > .stage > .stage-winner-image {
@@ -102,8 +113,30 @@
     background-image: url("../../maps and modes (bo3-bo5)/bo3/bo3 map frames.png");
 }
 
+.scene.stages-scene > .scene-content > .stages-grid.bo3 > .stage > .stage-map-image {
+    -webkit-mask-image: url("../../maps and modes (bo3-bo5)/bo3/bo3 mask frame.png");
+    mask-image: url("../../maps and modes (bo3-bo5)/bo3/bo3 mask frame.png");
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 440% 190%;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 435% 175%;
+}
+
 .scene.stages-scene > .scene-content > .stages-grid.bo5 ~ .stages-frame {
-    background-image: url("../../maps and modes (bo3-bo5)/bo5/bo5 mask image.png");
+    background-image: url("../../maps and modes (bo3-bo5)/bo5/bo5 map frames.png");
+}
+
+.scene.stages-scene > .scene-content > .stages-grid.bo5 > .stage > .stage-map-image {
+    -webkit-mask-image: url("../../maps and modes (bo3-bo5)/bo5/bo5 mask image.png");
+    mask-image: url("../../maps and modes (bo3-bo5)/bo5/bo5 mask image.png");
+    -webkit-mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-size: 622% 170%;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    mask-size: 544% 177%;
 }
 
 .scene.stages-scene > .scene-content > .stages-elements {

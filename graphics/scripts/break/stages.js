@@ -10,6 +10,15 @@ function getStageMap(game) {
     return game?.map || game?.stage || {};
 }
 
+function getStageImageKey(game) {
+    const map = getStageMap(game);
+    if (typeof map === 'string' || typeof map === 'number') return String(map);
+    if (map && typeof map === 'object') {
+        return map.key || map.id || map.name || '';
+    }
+    return '';
+}
+
 function getStageWinner(game) {
     return getStageValue(
         game?.winner || game?.winningTeam || game?.winnerTeam,
@@ -49,9 +58,11 @@ function setStageText(stage, selector, value) {
 function setStageData(stage, game, round) {
     const map = getStageMap(game);
     const mapName = getStageValue(map, getStageValue(game?.mapName || game?.stageName, 'Unknown map'));
+    const stageImageKey = getStageImageKey(game);
     const mode = getStageValue(game?.mode || game?.gameMode, '');
     const winnerTeam = getStageWinnerTeam(game, round);
     const winnerImage = winnerTeam?.logoUrl || winnerTeam?.imageUrl || winnerTeam?.logo || '';
+    const stageImage = assetPaths.value?.stageImages?.[stageImageKey] || '';
 
     setStageText(stage, '[data-stage-name]', mapName);
     setStageText(stage, '[data-stage-mode]', mode);
@@ -62,6 +73,11 @@ function setStageData(stage, game, round) {
     const winnerImageElement = stage.querySelector('[data-stage-winner-image]');
     if (winnerImageElement) {
         winnerImageElement.style.backgroundImage = winnerImage ? `url("${winnerImage}")` : 'none';
+    }
+
+    const stageImageElement = stage.querySelector('[data-stage-map-image]');
+    if (stageImageElement) {
+        stageImageElement.style.backgroundImage = stageImage ? `url("${stageImage}")` : 'none';
     }
 
     stage.dataset.completed = String(Boolean(game?.isCompleted));
@@ -101,3 +117,4 @@ function setStagesData(round) {
 }
 
 activeRound.on('change', setStagesData);
+assetPaths.on('change', () => setStagesData(activeRound.value));
