@@ -157,11 +157,8 @@
     top: 0;
     left: 50%;
     z-index: 7;
-    display: grid;
-    grid-template-columns: 1fr 0.5fr 1fr;
-    align-items: center;
     width: 1000px;
-    height: 160px;
+    height: 175px;
     transform: translateX(-50%);
     color: #fff;
     text-align: center;
@@ -169,25 +166,45 @@
     pointer-events: none;
 }
 
+.scene.stages-scene > .scene-content > .stages-scoreboard > .team-names {
+    position: absolute;
+    inset: 0;
+}
+
+.scene.stages-scene > .scene-content > .stages-scoreboard > .team-names > fitted-text {
+    position: absolute;
+    top: 95px;
+    width: 700px;
+    height: 90px;
+    margin: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 60px;
+    font-weight: 700;
+}
+
 .scene.stages-scene > .scene-content > .stages-scoreboard > .scores {
+    position: absolute;
+    top: 65px;
+    left: 50%;
     display: grid;
     grid-template-columns: 1fr 0.5fr 1fr;
     align-items: center;
     justify-items: center;
-    font-size: 42px;
-    font-weight: 700;
-}
-
-.scene.stages-scene > .scene-content > .stages-scoreboard > fitted-text {
-    margin: 0 10px;
-    font-size: 28px;
+    width: 270px;
+    min-height: 28px;
+    transform: translateX(-50%);
+    font-size: 100px;
     font-weight: 600;
 }
 
 .scene.stages-scene #team-a-name-scoreboard {
-    justify-self: end;
+    right: 660px;
+    text-align: center;
 }
 
 .scene.stages-scene #team-b-name-scoreboard {
-    justify-self: start;
+    left: 660px;
+    text-align: center;
 }

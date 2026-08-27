@@ -48,13 +48,15 @@
 <div class="scene stages-scene">
     <div class="scene-content">
         <div class="stages-scoreboard" aria-live="polite">
-            <fitted-text id="team-a-name-scoreboard"></fitted-text>
+            <div class="team-names">
+                <fitted-text id="team-a-name-scoreboard"></fitted-text>
+                <fitted-text id="team-b-name-scoreboard"></fitted-text>
+            </div>
             <div class="scores">
                 <fitted-text data-stage-score-a></fitted-text>
-                <span>-</span>
+                <span></span>
                 <fitted-text data-stage-score-b></fitted-text>
             </div>
-            <fitted-text id="team-b-name-scoreboard"></fitted-text>
         </div>
 
         <div class="stages-grid bo5" data-stages-grid>
