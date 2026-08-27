@@ -139,6 +139,14 @@
     mask-size: 544% 177%;
 }
 
+.scene.stages-scene > .scene-content > .stages-grid.bo5 > .stage:nth-child(4) > .stage-map-image {
+    transform: translateX(-8px);
+}
+
+.scene.stages-scene > .scene-content > .stages-grid.bo5 > .stage:nth-child(5) > .stage-map-image {
+    transform: translateX(-3px);
+}
+
 .scene.stages-scene > .scene-content > .stages-elements {
     z-index: 5;
     background-image: url("../../maps and modes (bo3-bo5)/bo3bo5%20elements%20.png");
