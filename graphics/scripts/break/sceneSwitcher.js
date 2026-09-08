@@ -26,6 +26,10 @@ function hideStages() {
     setSceneVisibility('.stages-scene', false);
 }
 
+function hideCommentator() {
+    setSceneVisibility('.main-scene', false);
+}
+
 function showScene(sceneSelector) {
     toggleExpandBackground(false);
     gsap.to(`${sceneSelector} > .scene-content`, {
@@ -65,6 +69,10 @@ function showStages() {
     });
 }
 
+function showCommentator() {
+    showScene('.main-scene');
+}
+
 if (activeBreakScene && typeof activeBreakScene.on === 'function') {
     activeBreakScene.on('change', (newValue, oldValue) => {
         if (!oldValue) {
@@ -86,7 +94,7 @@ if (activeBreakScene && typeof activeBreakScene.on === 'function') {
         } else {
             switch (oldValue) {
                 case 'main':
-                    hideMainScene();
+                    hideCommentator();
                     break;
                 case 'teams':
                     hideTeams();
@@ -102,7 +110,7 @@ if (activeBreakScene && typeof activeBreakScene.on === 'function') {
             case 'main':
                 hideInfoBar();
                 setInfoSwitchAnim();
-                showMainScene();
+                showCommentator();
                 break;
             case 'teams':
                 showInfoBar();

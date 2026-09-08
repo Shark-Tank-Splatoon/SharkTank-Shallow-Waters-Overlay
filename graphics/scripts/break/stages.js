@@ -72,7 +72,7 @@ function setStageData(stage, game, round) {
     const winnerTeam = getStageWinnerTeam(game, round);
     const isCompleted = Boolean(winnerTeam);
     const winnerImage = winnerTeam?.logoUrl || winnerTeam?.imageUrl || winnerTeam?.logo || '';
-    const winnerImageUrl = winnerImage || (isCompleted ? '../../comm-break/pibble%20(MANDATORY).jpg' : '');
+    const winnerImageUrl = winnerImage || (isCompleted ? '../../img/comm-break/pibble%20(MANDATORY).jpg' : '');
     const stageImage = assetPaths?.value?.stageImages?.[stageImageKey] || '';
 
     setStageText(stage, '[data-stage-name]', mapName);

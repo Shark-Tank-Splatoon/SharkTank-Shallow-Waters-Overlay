@@ -4,31 +4,138 @@
 */
 
 .scene.main-scene {
-    display: flex;
-    flex-direction: row;
+    position: absolute;
+    inset: 0;
+    z-index: 2;
 }
 
-.scene.main-scene .scene-content {
+.scene.main-scene > .scene-content {
+    position: absolute;
+    inset: 0;
     width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: #050b46;
+}
 
+.scene.main-scene .scene-content > img {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    pointer-events: none;
+}
+
+.scene.main-scene .commentator-background {
+    z-index: 1;
+    object-fit: cover;
+}
+
+.scene.main-scene .commentator-cover {
+    z-index: 3;
+    object-fit: contain;
+}
+
+.scene.main-scene .commentator-foreground {
+    z-index: 4;
+    object-fit: fill;
+}
+
+.commentator-pfp {
+    position: absolute;
+    top: 108px;
+    z-index: 2;
+    width: 600px;
+    height: 600px;
+    background-color: #b7e6f5;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    -webkit-mask-image: url("../../img/comm-break/240%20x%20240%20comm%20pfp%20mask.png");
+    mask-image: url("../../img/comm-break/240%20x%20240%20comm%20pfp%20mask.png");
+    -webkit-mask-position: center;
+    mask-position: center;
+    -webkit-mask-repeat: no-repeat;
+    mask-repeat: no-repeat;
+    -webkit-mask-size: contain;
+    mask-size: contain;
+}
+
+.commentator-pfp-a {
+    left: 108px;
+}
+
+.commentator-pfp-b {
+    right: 108px;
+}
+
+.commentator-card {
+    position: absolute;
+    top: 600px;
+    z-index: 5;
+    width: 695px;
+    height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-size: 38px;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.75);
+}
+
+.commentator-card-a {
+    left: 190px;
+}
+
+.commentator-card-b {
+    right: 190px;
+}
+
+.commentator-card-name {
+    max-width: 100%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.commentator-card-name:empty {
+    visibility: hidden;
+}
+
+.next-match-info {
+    position: absolute;
+    top: 930px;
+    left: 50%;
+    z-index: 5;
+    width: 1500px;
+    transform: translateX(-50%);
+    color: #fff;
+    font-size: 36px;
+    font-weight: 700;
+    text-align: center;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.8);
+}
+
+.next-match-name {
+    margin-bottom: 8px;
+    font-size: 28px;
+}
+
+.next-match-teams {
     display: flex;
     justify-content: center;
-    flex-direction: column;
-}
-.scene.main-scene .scene-content img{
-    width: 100%;
-    position: absolute;
+    gap: 36px;
 }
 
-.pond-background-image::after {
-    z-index: 2;
-    background-image:
-        url("../../comm-break/commentator-cover.png"),
-        url("../../comm-break/240%20x%20240%20comm%20pfp%20mask.png");
-    background-position:
-        0 0,
-        center center;
-    background-size:
-        1920px 1080px,
-        240px 240px;
+.next-match-teams span {
+    min-width: 360px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.next-match-teams span[aria-hidden="true"] {
+    min-width: auto;
 }

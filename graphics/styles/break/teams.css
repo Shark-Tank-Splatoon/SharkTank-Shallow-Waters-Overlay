@@ -36,12 +36,12 @@
 
 .scene.teams-scene > .scene-content > .teams-background > .teams-background-image {
   z-index: 1;
-  background-image: url("../../rosters/rosters%20bg.png");
+  background-image: url("../../img/rosters/rosters%20bg.png");
 }
 
 .scene.teams-scene > .scene-content > .teams-background > .teams-roster {
   z-index: 2;
-  background-image: url("../../rosters/rosters%20elements.png");
+  background-image: url("../../img/rosters/rosters%20elements.png");
 }
 
 .scene.teams-scene > .scene-content > .active-round-info {
@@ -214,12 +214,12 @@
 
 .scene.teams-scene > .scene-content > .teams-background > .teams-roster::before {
   z-index: 1;
-  background-image: url("../../rosters/rosters_pfp%20overlay.png");
+  background-image: url("../../img/rosters/rosters_pfp%20overlay.png");
 }
 
 .scene.teams-scene > .scene-content > .teams-background > .teams-roster::after {
   z-index: 2;
-  background-image: url("../../rosters/rosters_pfp%20overlay%20alt.png");
+  background-image: url("../../img/rosters/rosters_pfp%20overlay%20alt.png");
   opacity: 0;
 }
 

@@ -1,6 +1,7 @@
 const activeBreakScene = nodecg.Replicant('activeBreakScene', DASHBOARD_BUNDLE_NAME);
 const casters = nodecg.Replicant('casters', DASHBOARD_BUNDLE_NAME);
 const activeRound = nodecg.Replicant('activeRound', DASHBOARD_BUNDLE_NAME);
+const nextRound = nodecg.Replicant('nextRound', DASHBOARD_BUNDLE_NAME);
 const scoreboardData = nodecg.Replicant('scoreboardData', DASHBOARD_BUNDLE_NAME);
 const assetPaths = nodecg.Replicant('assetPaths', DASHBOARD_BUNDLE_NAME);
 const localeInfo = nodecg.Replicant('localeInfo', DASHBOARD_BUNDLE_NAME);

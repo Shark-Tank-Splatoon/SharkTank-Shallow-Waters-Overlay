@@ -9,6 +9,7 @@
     <!-- Here is were u link the stylesheets -->
     <link rel="stylesheet" href="styles/globals.css">
     <link rel="stylesheet" href="styles/break/break.css">
+    <link rel="stylesheet" href="styles/break/main.css">
     <link rel="stylesheet" href="styles/break/teams.css">
     <link rel="stylesheet" href="styles/break/stages.css">
 </head>
@@ -16,6 +17,31 @@
 <body>
 <div class="pond-background">
     <div class="pond"></div>
+</div>
+
+<!-- Commentator Scene -->
+<div class="scene main-scene">
+    <div class="scene-content">
+        <img class="commentator-background" src="img/comm-break/cm-background2.png" alt="">
+        <img class="commentator-cover" src="img/comm-break/commentator-cover.png" alt="">
+        <img class="commentator-foreground" src="img/comm-break/updated%20comm%20break.png" alt="">
+        <div class="commentator-pfp commentator-pfp-a" data-commentator-pfp="0"></div>
+        <div class="commentator-pfp commentator-pfp-b" data-commentator-pfp="1"></div>
+        <div class="next-match-info" data-next-match-info>
+            <div class="next-match-name" data-next-match-name></div>
+            <div class="next-match-teams">
+                <span data-next-match-team-a></span>
+                <span aria-hidden="true">vs</span>
+                <span data-next-match-team-b></span>
+            </div>
+        </div>
+        <div class="commentator-card commentator-card-a">
+            <div class="commentator-card-name" data-commentator-slot="0"></div>
+        </div>
+        <div class="commentator-card commentator-card-b">
+            <div class="commentator-card-name" data-commentator-slot="1"></div>
+        </div>
+    </div>
 </div>
 
 <!-- Teams Scene -->
@@ -124,7 +150,7 @@
 </div>
 
 <!-- im piblling it oh yea -->
-<img id="pibble-image" src="comm-break/pibble%20(MANDATORY).jpg" alt="" hidden>
+<img id="pibble-image" src="img/comm-break/pibble%20(MANDATORY).jpg" alt="" hidden>
 
 <!-- Here is where u link the scripts -->
 <script src="../node_modules/gsap/dist/gsap.min.js"></script>

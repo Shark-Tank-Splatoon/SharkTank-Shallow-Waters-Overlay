@@ -41,6 +41,12 @@ function getCommentatorName(value) {
 	return name || social;
 }
 
+function getCommentatorImage(value) {
+	if (!value || typeof value !== 'object') return '';
+
+	return value.imageUrl || value.avatarUrl || value.profileImageUrl || value.pfpUrl || '';
+}
+
 function getCommentatorNames(value) {
 	if (Array.isArray(value)) {
 		return value.map(getCommentatorName).filter(Boolean).join(' & ');
@@ -63,6 +69,29 @@ function setCommentatorNames(value) {
 		if (track) track.textContent = names ? `${names}     ${names}` : '';
 		else element.textContent = names;
 	});
+
+	const commentators = value && typeof value === 'object' && !Array.isArray(value)
+		? Object.values(value)
+		: Array.isArray(value) ? value : [value];
+	document.querySelectorAll('[data-commentator-slot]').forEach(element => {
+		const commentator = commentators[Number(element.dataset.commentatorSlot)];
+		element.textContent = getCommentatorName(commentator);
+	});
+	document.querySelectorAll('[data-commentator-pfp]').forEach(element => {
+		const commentator = commentators[Number(element.dataset.commentatorPfp)];
+		const imageUrl = getCommentatorImage(commentator);
+		element.style.backgroundImage = imageUrl ? `url("${imageUrl}")` : 'none';
+	});
+}
+
+function getRoundName(round = {}) {
+	return round?.name || round?.match?.name || '';
+}
+
+function setNextMatchData(round = {}) {
+	setText('[data-next-match-name]', getRoundName(round));
+	setText('[data-next-match-team-a]', round?.teamA?.name || '');
+	setText('[data-next-match-team-b]', round?.teamB?.name || '');
 }
 
 function getPlayerNames(team = {}) {
@@ -121,6 +150,11 @@ function setActiveRoundData(round) {
 
 if (activeRound && typeof activeRound.on === 'function') {
 	activeRound.on('change', setActiveRoundData);
+}
+
+if (nextRound && typeof nextRound.on === 'function') {
+	nextRound.on('change', setNextMatchData);
+	setNextMatchData(nextRound.value);
 }
 
 if (casters && typeof casters.on === 'function') {
