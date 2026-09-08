@@ -31,9 +31,19 @@ function getStageWinnerTeam(game, round) {
     const teamB = round?.teamB || {};
     const winner = game?.winner || game?.winningTeam || game?.winnerTeam;
 
-    if (winner && typeof winner === 'object') return winner;
+    if (winner && typeof winner === 'object') {
+        const winnerId = getStageValue(winner.id).toLowerCase();
+        const winnerName = getStageValue(winner.name).toLowerCase();
+        const teamAValues = [getStageValue(teamA.id), getStageValue(teamA.name)].map(value => value.toLowerCase());
+        const teamBValues = [getStageValue(teamB.id), getStageValue(teamB.name)].map(value => value.toLowerCase());
+        if ([winnerId, winnerName].some(value => value && teamAValues.includes(value))) return teamA;
+        if ([winnerId, winnerName].some(value => value && teamBValues.includes(value))) return teamB;
+        return winner;
+    }
 
     const winnerValue = getStageValue(winner).toLowerCase();
+    if (winnerValue === 'alpha') return teamA;
+    if (winnerValue === 'bravo') return teamB;
     if (winnerValue && [teamA.id, teamA.name].some(value => getStageValue(value).toLowerCase() === winnerValue)) {
         return teamA;
     }
@@ -59,20 +69,23 @@ function setStageData(stage, game, round) {
     const map = getStageMap(game);
     const mapName = getStageValue(map, getStageValue(game?.mapName || game?.stageName, 'Unknown map'));
     const stageImageKey = getStageImageKey(game);
-    const mode = getStageValue(game?.mode || game?.gameMode, '');
     const winnerTeam = getStageWinnerTeam(game, round);
+    const isCompleted = Boolean(winnerTeam);
     const winnerImage = winnerTeam?.logoUrl || winnerTeam?.imageUrl || winnerTeam?.logo || '';
-    const stageImage = assetPaths.value?.stageImages?.[stageImageKey] || '';
+    const winnerImageUrl = winnerImage || (isCompleted ? '../../comm-break/pibble%20(MANDATORY).jpg' : '');
+    const stageImage = assetPaths?.value?.stageImages?.[stageImageKey] || '';
 
     setStageText(stage, '[data-stage-name]', mapName);
-    setStageText(stage, '[data-stage-mode]', mode);
 
-    const stageInfo = stage.querySelector('.stage-info');
-    if (stageInfo) stageInfo.classList.toggle('without-mode', !mode);
+    const stageLabel = document.querySelector(`[data-stage-label="${stage.dataset.stageIndex}"]`);
+    if (stageLabel) {
+        setStageText(stageLabel, '[data-stage-label-name]', mapName);
+    }
 
     const winnerImageElement = stage.querySelector('[data-stage-winner-image]');
     if (winnerImageElement) {
-        winnerImageElement.style.backgroundImage = winnerImage ? `url("${winnerImage}")` : 'none';
+        winnerImageElement.style.setProperty('--winner-image', winnerImageUrl ? `url("${winnerImageUrl}")` : 'none');
+        winnerImageElement.classList.toggle('has-winner', Boolean(winnerImageUrl));
     }
 
     const stageImageElement = stage.querySelector('[data-stage-map-image]');
@@ -80,10 +93,10 @@ function setStageData(stage, game, round) {
         stageImageElement.style.backgroundImage = stageImage ? `url("${stageImage}")` : 'none';
     }
 
-    stage.dataset.completed = String(Boolean(game?.isCompleted));
+    stage.dataset.completed = String(isCompleted);
 }
 
-function setStagesData(round) {
+function setStagesData(round = {}) {
     const stagesScene = document.querySelector('.stages-scene');
     const stagesGrid = document.querySelector('[data-stages-grid]');
     if (!stagesScene || !stagesGrid) return;
@@ -116,5 +129,10 @@ function setStagesData(round) {
     if (teamBScore) teamBScore.textContent = getStageValue(teamB.score, '0');
 }
 
-activeRound.on('change', setStagesData);
-assetPaths.on('change', () => setStagesData(activeRound.value));
+if (activeRound && typeof activeRound.on === 'function') {
+    activeRound.on('change', setStagesData);
+}
+
+if (assetPaths && typeof assetPaths.on === 'function') {
+    assetPaths.on('change', () => setStagesData(activeRound?.value || {}));
+}

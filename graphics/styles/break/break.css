@@ -1,8 +1,6 @@
-/* 
-    Break Scene CSS
-    This file contains the CSS for the break scene, which is used for intermissions and breaks during the stream.
+/*
+    Shared break-scene styling for the background and full-frame overlay.
 */
-
 
 body {
     background: #000;
@@ -15,21 +13,9 @@ body {
     height: 1080px;
     overflow: hidden;
     z-index: 1;
+    background: radial-gradient(circle at center, rgba(17, 24, 39, 0.25), rgba(0, 0, 0, 0.75) 72%);
 }
-/*
-.pond-background-image,
-.pond-background-image::before,
-.pond-background-image::after {
-    position: absolute;
-    inset: 0;
-    width: 1920px;
-    height: 1080px;
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    content: "";
-    pointer-events: none;
-}
-*/
+
 .pond-background > .pond {
     position: absolute;
     inset: 0;
@@ -38,6 +24,7 @@ body {
     z-index: 1;
     background-image: url("../../comm-break/cm-background.png");
     background-repeat: no-repeat;
-    background-position: 0 0;
+    background-position: center;
     background-size: 1920px 1080px;
+    filter: saturate(1.08) brightness(0.96);
 }

@@ -6,7 +6,7 @@ It listens for changes in the "scene" replicant and updates the visibility of th
 function setSceneVisibility(sceneSelector, visible) {
     const sceneContent = document.querySelector(`${sceneSelector} > .scene-content`);
 
-    if (!sceneContent) return;
+    if (!sceneContent || !window.gsap) return;
 
     gsap.set(sceneContent, {
         x: visible ? 0 : 1920,
@@ -54,57 +54,66 @@ function showTeams() {
 }
 
 function showStages() {
-    showScene('.stages-scene');
+    toggleExpandBackground(false);
+    gsap.set('.stages-scene > .scene-content', {
+        x: 0,
+        opacity: 0
+    });
+    gsap.to('.stages-scene > .scene-content', {
+        opacity: 1,
+        duration: 0.5
+    });
 }
 
-activeBreakScene.on('change', (newValue, oldValue) => {
-    if (!oldValue) {
+if (activeBreakScene && typeof activeBreakScene.on === 'function') {
+    activeBreakScene.on('change', (newValue, oldValue) => {
+        if (!oldValue) {
+            switch (newValue) {
+                case 'main':
+                    hideStages();
+                    hideTeams();
+                    break;
+                case 'teams':
+                    hideMainScene();
+                    hideStages();
+                    break;
+                case 'stages':
+                    hideMainScene();
+                    hideTeams();
+                    break;
+                default:
+            }
+        } else {
+            switch (oldValue) {
+                case 'main':
+                    hideMainScene();
+                    break;
+                case 'teams':
+                    hideTeams();
+                    break;
+                case 'stages':
+                    hideStages();
+                    break;
+                default:
+            }
+        }
+
         switch (newValue) {
             case 'main':
-                hideStages();
-                hideTeams();
+                hideInfoBar();
+                setInfoSwitchAnim();
+                showMainScene();
                 break;
             case 'teams':
-                hideMainScene();
-                hideStages();
+                showInfoBar();
+                showTeams();
                 break;
             case 'stages':
-                hideMainScene();
-                hideTeams();
+                showInfoBar();
+                showStages();
                 break;
             default:
-
         }
-    } else {
-        switch (oldValue) {
-            case 'main':
-                hideMainScene();
-                break;
-            case 'teams':
-                hideTeams();
-                break;
-            case 'stages':
-                hideStages();
-                break;
-            default:
-
-        }
-    }
-    switch (newValue) {
-        case 'main':
-            hideInfoBar();
-            setInfoSwitchAnim();
-            showMainScene();
-            break;
-        case 'teams':
-            showInfoBar();
-            showTeams();
-            break;
-        case 'stages':
-            showInfoBar();
-            showStages();
-            break;
-        default:
-    }
-}); 
+    });
+}
 

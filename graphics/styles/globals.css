@@ -3,14 +3,33 @@
     This file contains the global CSS for the overlay, which is used across all scenes.
 */
 
-
 body {
     margin: 0;
     width: 1920px;
     height: 1080px;
     overflow: hidden;
+    background: var(--panel-bg);
+    color: var(--panel-text);
     font-family: "Arial", sans-serif;
 }
+
+body {
+    position: relative;
+}
+
+.scene {
+    position: absolute;
+    inset: 0;
+}
+
+.scene-content {
+    position: absolute;
+    inset: 0;
+    width: var(--overlay-width);
+    height: var(--overlay-height);
+    overflow: hidden;
+}
+
 #pibble-image {
     position: fixed;
     inset: 0;
@@ -19,6 +38,7 @@ body {
     object-fit: contain;
     z-index: 1000;
 }
+
 .flex-align-center {
     display: flex;
     justify-content: center;

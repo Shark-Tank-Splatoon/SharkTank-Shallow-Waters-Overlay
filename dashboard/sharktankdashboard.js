@@ -4,14 +4,16 @@ If you want a custom feature for this is the place to add it.
 */
 
 // Start of the Pibble Mode Toggle
-const PibbleModeEnabled = nodecg.Replicant('PibbleModeEnabled', {defaultValue: false});
+const PibbleModeEnabled = nodecg.Replicant('PibbleModeEnabled', { defaultValue: false });
 const PibbleModeToggle = document.getElementById('pibble-mode-toggle');
 
-PibbleModeToggle.addEventListener('change', e => {
-    PibbleModeEnabled.value = e.target.checked;
-});
+if (PibbleModeToggle) {
+    PibbleModeToggle.addEventListener('change', event => {
+        PibbleModeEnabled.value = Boolean(event.target.checked);
+    });
 
-PibbleModeEnabled.on('change', newValue => {
-    PibbleModeToggle.checked = newValue;
-});
+    PibbleModeEnabled.on('change', newValue => {
+        PibbleModeToggle.checked = Boolean(newValue);
+    });
+}
 // End of the Pibble Mode Toggle

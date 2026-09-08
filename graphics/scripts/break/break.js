@@ -12,11 +12,11 @@ function hideInfoBar() {}
 
 function setInfoSwitchAnim() {}
 
-function getRoundFormatLabel(round) {
-	const gameCount = Array.isArray(round.games) ? round.games.length : 0;
+function getRoundFormatLabel(round = {}) {
+	const gameCount = Array.isArray(round?.games) ? round.games.length : 0;
 	if (gameCount === 0) return '';
 
-	switch (round.match?.type) {
+	switch (round?.match?.type) {
 		case 'PLAY_ALL':
 			return `PA${gameCount}`;
 		case 'BEST_OF':
@@ -31,8 +31,42 @@ function setText(selector, value) {
 	if (element) element.textContent = value;
 }
 
-function getPlayerNames(team) {
-	if (!Array.isArray(team.players)) return '';
+function getCommentatorName(value) {
+	if (!value) return '';
+	if (typeof value !== 'object') return String(value);
+
+	const name = value.name || value.displayName || value.realName || value.handle || value.value || '';
+	const social = value.twitter || value.social || value.socialMedia || '';
+	if (name && social) return `${name} (${social})`;
+	return name || social;
+}
+
+function getCommentatorNames(value) {
+	if (Array.isArray(value)) {
+		return value.map(getCommentatorName).filter(Boolean).join(' & ');
+	}
+
+	if (value && typeof value === 'object') {
+		return Object.values(value)
+			.map(getCommentatorName)
+			.filter(Boolean)
+			.join(' & ');
+	}
+
+	return getCommentatorName(value);
+}
+
+function setCommentatorNames(value) {
+	const names = getCommentatorNames(value);
+	document.querySelectorAll('[data-commentator-names]').forEach(element => {
+		const track = element.querySelector('.commentator-names-track');
+		if (track) track.textContent = names ? `${names}     ${names}` : '';
+		else element.textContent = names;
+	});
+}
+
+function getPlayerNames(team = {}) {
+	if (!Array.isArray(team?.players)) return '';
 
 	return team.players
 		.map(player => player?.inGameName?.name ?? player?.inGameName ?? player?.name ?? '')
@@ -40,10 +74,12 @@ function getPlayerNames(team) {
 		.join('\n');
 }
 
-function setTeamLogo(selector, team){
+function setTeamLogo(selector, team = {}) {
 	const element = document.querySelector(selector);
 	if (!element) return;
-	element.style.backgroundImage = team.showLogo && team.logoUrl ? `url("${team.logoUrl}")` : 'none';
+
+	const logoUrl = team?.showLogo && team?.logoUrl ? team.logoUrl : '';
+	element.style.backgroundImage = logoUrl ? `url("${logoUrl}")` : 'none';
 }
 
 function setActiveRoundData(round) {
@@ -53,10 +89,10 @@ function setActiveRoundData(round) {
 	const teamsRoster = document.querySelector('.teams-roster');
 	if (!teamsScene || !teamsRoster) return;
 
-	const teamA = round.teamA || {};
-	const teamB = round.teamB || {};
-	const match = round.match || {};
-	const gameCount = Array.isArray(round.games) ? round.games.length : 0;
+	const teamA = round?.teamA || {};
+	const teamB = round?.teamB || {};
+	const match = round?.match || {};
+	const gameCount = Array.isArray(round?.games) ? round.games.length : 0;
 
 	teamsScene.dataset.matchName = match.name || '';
 	teamsScene.dataset.matchType = match.type || '';
@@ -83,4 +119,11 @@ function setActiveRoundData(round) {
 	teamsScene.style.setProperty('--team-b-color', teamB.color || 'transparent');
 }
 
-activeRound.on('change', setActiveRoundData);
+if (activeRound && typeof activeRound.on === 'function') {
+	activeRound.on('change', setActiveRoundData);
+}
+
+if (casters && typeof casters.on === 'function') {
+	casters.on('change', setCommentatorNames);
+	setCommentatorNames(casters.value);
+}
