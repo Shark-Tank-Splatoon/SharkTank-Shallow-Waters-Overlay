@@ -17,3 +17,17 @@ if (PibbleModeToggle) {
     });
 }
 // End of the Pibble Mode Toggle
+
+const HomelandEnabled = nodecg.Replicant('HomelandEnabled', { defaultValue: false });
+const HomelandToggle = document.getElementById('homeland-toggle');
+
+if (HomelandToggle) {
+    HomelandToggle.addEventListener('change', event => {
+        HomelandEnabled.value = Boolean(event.target.checked);
+    });
+
+    HomelandEnabled.on('change', newValue => {
+        HomelandToggle.checked = Boolean(newValue);
+    });
+}
+// End of the Homeland Toggle

@@ -1,0 +1,28 @@
+.scene.starting-soon {
+    position: absolute;
+    inset: 0;
+}
+
+.scene.starting-soon > .scene-content {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: #050b46
+}
+
+.scene.starting-soon > .scene-content > img {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    pointer-events: none;
+}
+
+.background {
+    position: absolute;
+    width: 1920px;
+    height: 1080px;
+    background: url("../../img/title-starting soon-bracket/bg.png")
+}
