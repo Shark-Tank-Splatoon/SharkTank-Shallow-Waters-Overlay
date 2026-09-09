@@ -18,7 +18,7 @@ Very big Thank you to IPL for creating and open Sourcing their Overlay and Overl
 ## To-Dos
 
 - ASAP:
-  - Add the Correct Font
+  ~~- Add the Correct Font~~
   - Readjust Text Fields with correct Font, size and positioning
   
 - Do ingame Scene
