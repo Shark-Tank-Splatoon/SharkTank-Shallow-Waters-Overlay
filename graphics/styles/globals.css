@@ -3,6 +3,14 @@
     This file contains the global CSS for the overlay, which is used across all scenes.
 */
 
+/* Font */
+@font-face {
+    font-family: 'Splatfont 2';
+    src: url('../fonts/Splatfont2.ttf') format('truetype');
+    font-style: normal;
+    font-display: swap;
+}
+
 body {
     margin: 0;
     width: 1920px;
@@ -10,7 +18,7 @@ body {
     overflow: hidden;
     background: var(--panel-bg);
     color: var(--panel-text);
-    font-family: "Arial", sans-serif;
+    font-family: 'Splatfont 2', sans-serif;
 }
 
 body {
