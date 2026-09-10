@@ -5,27 +5,27 @@ A [NodeCG](http://github.com/nodecg/nodecg) bundle, used for the Shark Tank Shal
 
 - Install [`ipl-overlay-controls.`](https://github.com/inkfarer/ipl-overlay-controls)
 
-- add more instructions later blehh
+- Add more instructions later blehh
 
-Very big Thank you to IPL for creating and open Sourcing their Overlay and Overlay-Controls :pray:
+A very big thank you to IPL for creating and open-sourcing their Overlay and Overlay-Controls :pray:
 
 ## Current State
 
-- Mostly working Break scenes, aka: Stages, Teams and "intermission"
+- Mostly working Break scenes, aka: Stages, Teams, and "intermission"
 
-- Does work and uses IPL-Overlay-Control as its requirement for Sendou stuff and like everything else that isnt graphics
+- Does work and uses IPL-Overlay-Control as its requirement for Sendou stuff and like everything else that isn't graphics
 
 ## To-Dos
 
 - ASAP:
   ~~- Add the Correct Font~~
-  - Readjust Text Fields with correct Font, size and positioning
+  - Readjust Text Fields with correct Font, size, and positioning
   
-- Do ingame Scene
+- Do in-game scene
   - Only needs to be put together, since logic should already be in place
 
 - Starting Soon Scene
-  - Only needs to be put together, since its a static page
+  - Only needs to be put together, since it's a static page
 
 - More Scene Toggles
 
