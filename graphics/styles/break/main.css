@@ -15,7 +15,7 @@
     width: 1920px;
     height: 1080px;
     overflow: hidden;
-    background: #050b46;
+    background: url("../../img/2_commbreak/SW%20comm%20bg.png") center / 1920px 1080px no-repeat;
 }
 
 .scene.main-scene .scene-content > img {
@@ -28,7 +28,7 @@
 
 .scene.main-scene .commentator-background {
     z-index: 1;
-    object-fit: cover;
+    object-fit: none;
 }
 
 .scene.main-scene .commentator-cover {
@@ -51,8 +51,8 @@
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
-    -webkit-mask-image: url("../../img/comm-break/240%20x%20240%20comm%20pfp%20mask.png");
-    mask-image: url("../../img/comm-break/240%20x%20240%20comm%20pfp%20mask.png");
+    -webkit-mask-image: url("../../img/2_commbreak/240%20x%20240%20comm%20pfp%20mask.png");
+    mask-image: url("../../img/2_commbreak/240%20x%20240%20comm%20pfp%20mask.png");
     -webkit-mask-position: center;
     mask-position: center;
     -webkit-mask-repeat: no-repeat;

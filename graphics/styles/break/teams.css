@@ -13,6 +13,7 @@
   width: 1920px;
   height: 1080px;
   overflow: hidden;
+  background: url("../../img/3_rostersscreen/SW%20rosters%20bg.png") center / 1920px 1080px no-repeat;
 }
 
 .scene.teams-scene > .scene-content > .teams-background {
@@ -36,12 +37,12 @@
 
 .scene.teams-scene > .scene-content > .teams-background > .teams-background-image {
   z-index: 1;
-  background-image: url("../../img/rosters/rosters%20bg.png");
+  background-image: url("../../img/3_rostersscreen/SW%20rosters%20bg.png");
 }
 
 .scene.teams-scene > .scene-content > .teams-background > .teams-roster {
   z-index: 2;
-  background-image: url("../../img/rosters/rosters%20elements.png");
+  background-image: url("../../img/3_rostersscreen/rosters%20elements%20(updated).png");
 }
 
 .scene.teams-scene > .scene-content > .active-round-info {
@@ -214,12 +215,12 @@
 
 .scene.teams-scene > .scene-content > .teams-background > .teams-roster::before {
   z-index: 1;
-  background-image: url("../../img/rosters/rosters_pfp%20overlay.png");
+  background-image: url("../../img/3_rostersscreen/pfp%20frames.png");
 }
 
 .scene.teams-scene > .scene-content > .teams-background > .teams-roster::after {
   z-index: 2;
-  background-image: url("../../img/rosters/rosters_pfp%20overlay%20alt.png");
+  background-image: url("../../img/3_rostersscreen/pfp%20frames.png");
   opacity: 0;
 }
 

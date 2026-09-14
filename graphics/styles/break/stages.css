@@ -14,14 +14,13 @@
     z-index: 2;
 }
 
-/* Sets background for all scenes in the break.html, since they all use the same image anyway */
 .scene.stages-scene > .scene-content {
     position: absolute;
     inset: 0;
     width: 1920px;
     height: 1080px;
     overflow: hidden;
-    background: url("../../img/maps%20and%20modes%20(bo3-bo5)/maps%20bg.png") center / 1920px 1080px no-repeat;
+    background: url("../../img/4_bo3bo5/Sw%20bo3bo5%20bg.png") center / 1920px 1080px no-repeat;
 }
 
 .scene.stages-scene > .scene-content > .stages-grid {
@@ -107,7 +106,7 @@
 
 .scene.stages-scene > .scene-content > .stages-grid > .stage > .stage-winner-image::after {
     z-index: 1;
-    background: url("../../img/maps%20and%20modes%20(bo3-bo5)/pfp%20frame.png") center / 100% 100% no-repeat;
+    background: url("../../img/4_bo3bo5/pfp%20frame.png") center / 100% 100% no-repeat;
     visibility: hidden;
 }
 
@@ -203,12 +202,12 @@
 
 /* Start of Image import for the scene */
 .scene.stages-scene > .scene-content > .stages-grid.bo3 ~ .stages-frame {
-    background-image: url("../../img/maps%20and%20modes%20(bo3-bo5)/bo3/bo3%20map%20frames.png");
+    background-image: url("../../img/4_bo3bo5/bo3/bo3%20map%20frames.png");
 }
 
 .scene.stages-scene > .scene-content > .stages-grid.bo3 > .stage > .stage-map-image {
-    -webkit-mask-image: url("../../img/maps%20and%20modes%20(bo3-bo5)/bo3/bo3%20mask%20frame.png");
-    mask-image: url("../../img/maps%20and%20modes%20(bo3-bo5)/bo3/bo3%20mask%20frame.png");
+    -webkit-mask-image: url("../../img/4_bo3bo5/bo3/bo3%20mask%20frame.png");
+    mask-image: url("../../img/4_bo3bo5/bo3/bo3%20mask%20frame.png");
     -webkit-mask-position: center;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 440% 190%;
@@ -218,12 +217,12 @@
 }
 
 .scene.stages-scene > .scene-content > .stages-grid.bo5 ~ .stages-frame {
-    background-image: url("../../img/maps%20and%20modes%20(bo3-bo5)/bo5/bo5%20map%20frames.png");
+    background-image: url("../../img/4_bo3bo5/bo5/bo5%20map%20frames.png");
 }
 
 .scene.stages-scene > .scene-content > .stages-grid.bo5 > .stage > .stage-map-image {
-    -webkit-mask-image: url("../../img/maps%20and%20modes%20(bo3-bo5)/bo5/bo5%20mask%20image.png");
-    mask-image: url("../../img/maps%20and%20modes%20(bo3-bo5)/bo5/bo5%20mask%20image.png");
+    -webkit-mask-image: url("../../img/4_bo3bo5/bo5/bo5%20mask%20image.png");
+    mask-image: url("../../img/4_bo3bo5/bo5/bo5%20mask%20image.png");
     -webkit-mask-position: center;
     -webkit-mask-repeat: no-repeat;
     -webkit-mask-size: 622% 170%;
@@ -242,7 +241,7 @@
 
 .scene.stages-scene > .scene-content > .stages-elements {
     z-index: 5;
-    background-image: url("../../img/maps%20and%20modes%20(bo3-bo5)/bo3bo5%20elements%20.png");
+    background-image: url("../../img/4_bo3bo5/bo3bo5%20elements%20.png");
 }
 /* End of Image import for scene */
 
