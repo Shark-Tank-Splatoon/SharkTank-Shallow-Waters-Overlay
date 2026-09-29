@@ -1,9 +1,40 @@
+const SET_OVER_IMAGE = 'img/8_extra/setover.png';
+const SET_OVER_LABEL = 'Set is Over!';
+const COUNTER_PICK_IMAGE = 'img/4_bo3bo5/bo5/counter%20pick%20image.png';
+
 function getStageValue(value, fallback = '') {
     if (typeof value === 'string' || typeof value === 'number') return String(value);
     if (value && typeof value === 'object') {
         return value.name || value.label || value.title || fallback;
     }
     return fallback;
+}
+
+function getTeamScore(team = {}) {
+    const score = team?.score ?? team?.wins ?? team?.matchScore;
+    return Number(getStageValue(score, '0')) || 0;
+}
+
+function getBestOfCount(round, games) {
+    const match = round?.match || {};
+    const configuredBestOf = Number(
+        match.bestOf ?? match.bestOfCount ?? match.gamesCount ?? round?.bestOf
+    );
+    if (configuredBestOf > 0) return configuredBestOf;
+
+    const type = String(match.type || match.format || '').toUpperCase();
+    if (type.includes('BO5') || type.includes('BEST_OF_5')) return 5;
+    if (type.includes('BO3') || type.includes('BEST_OF_3')) return 3;
+
+    return games.length;
+}
+
+function isStageGamePlayed(game) {
+    if (!game || typeof game !== 'object') return false;
+    if (game.isCompleted === true) return true;
+
+    const winner = String(game.winner || game.winningTeam || game.winnerTeam || '').toLowerCase();
+    return winner !== '' && winner !== 'none' && winner !== 'no_winner';
 }
 
 function getStageMap(game) {
@@ -73,7 +104,7 @@ function setStageData(stage, game, round) {
     const isCompleted = Boolean(winnerTeam);
     const winnerImage = winnerTeam?.logoUrl || winnerTeam?.imageUrl || winnerTeam?.logo || '';
     const winnerImageUrl = winnerImage || (isCompleted ? '../../img/2_commbreak/pibble%20(MANDATORY).jpg' : '');
-    const stageImage = assetPaths?.value?.stageImages?.[stageImageKey] || '';
+    const stageImage = assetPaths?.value?.stageImages?.[stageImageKey] || COUNTER_PICK_IMAGE;
 
     setStageText(stage, '[data-stage-name]', mapName);
 
@@ -105,6 +136,10 @@ function setStagesData(round = {}) {
     const stageElements = Array.from(stagesGrid.querySelectorAll(':scope > [data-stage]'));
     const gameCount = games.length || 5;
     const formatClass = gameCount <= 3 ? 'bo3' : 'bo5';
+    const teamAScore = getTeamScore(round?.teamA);
+    const teamBScore = getTeamScore(round?.teamB);
+    const matchIsOver = teamAScore >= 3 || teamBScore >= 3;
+    const isBo5 = getBestOfCount(round, games) >= 5;
 
     stagesGrid.classList.remove('bo3', 'bo5');
     stagesGrid.classList.add(formatClass);
@@ -112,21 +147,30 @@ function setStagesData(round = {}) {
 
     stageElements.forEach((stage, index) => {
         const game = games[index];
-        stage.style.display = game ? '' : 'none';
-        if (game) setStageData(stage, game, round);
+        const showSetOver = matchIsOver && isBo5 && !isStageGamePlayed(game);
+        stage.style.display = game || showSetOver ? '' : 'none';
+        if (showSetOver) {
+            setStageData(stage, {}, round);
+            setStageText(stage, '[data-stage-name]', SET_OVER_LABEL);
+            const stageLabel = document.querySelector(`[data-stage-label="${stage.dataset.stageIndex}"]`);
+            if (stageLabel) setStageText(stageLabel, '[data-stage-label-name]', SET_OVER_LABEL);
+            stage.querySelector('[data-stage-map-image]')?.style.setProperty('background-image', `url("${SET_OVER_IMAGE}")`);
+        } else if (game) {
+            setStageData(stage, game, round);
+        }
     });
 
     const teamA = round?.teamA || {};
     const teamB = round?.teamB || {};
     const teamAName = document.querySelector('#team-a-name-scoreboard');
     const teamBName = document.querySelector('#team-b-name-scoreboard');
-    const teamAScore = document.querySelector('[data-stage-score-a]');
-    const teamBScore = document.querySelector('[data-stage-score-b]');
+    const teamAScoreElement = document.querySelector('[data-stage-score-a]');
+    const teamBScoreElement = document.querySelector('[data-stage-score-b]');
 
     if (teamAName) teamAName.textContent = getStageValue(teamA.name);
     if (teamBName) teamBName.textContent = getStageValue(teamB.name);
-    if (teamAScore) teamAScore.textContent = getStageValue(teamA.score, '0');
-    if (teamBScore) teamBScore.textContent = getStageValue(teamB.score, '0');
+    if (teamAScoreElement) teamAScoreElement.textContent = getStageValue(teamA.score, '0');
+    if (teamBScoreElement) teamBScoreElement.textContent = getStageValue(teamB.score, '0');
 }
 
 if (activeRound && typeof activeRound.on === 'function') {

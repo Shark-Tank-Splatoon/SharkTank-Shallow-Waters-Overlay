@@ -78,7 +78,7 @@
 /* Container for Team Names */
 .scene.teams-scene > .scene-content > .active-round-info > .active-round-teams > .active-round-team {
   position: absolute;
-  top: 95px;
+  top: 60px;
   width: 700px;
   height: 90px;
   display: flex;
@@ -94,12 +94,12 @@
 
 /* Positional Adjustment for the Team Names */
 .scene.teams-scene > .scene-content > .active-round-info > .active-round-teams > .active-round-team-a {
-  left: 60px;
+  left: 71px;
   justify-content: flex-end;
 }
 
 .scene.teams-scene > .scene-content > .active-round-info > .active-round-teams > .active-round-team-b {
-  right: 60px;
+  right: 71px;
   justify-content: flex-start;
 }
 
@@ -117,10 +117,10 @@
 .scene.teams-scene > .scene-content > .active-round-info > .active-round-teams > .active-round-team-b > .active-round-team-b-roster {
   position: absolute;
   top: 175px;
-  width: 550px;
-  font-size: 54px;
+  width: 520px;
+  font-size: 70px;
   font-weight: 400;
-  line-height: 1.25;
+  line-height: 1.45;
   letter-spacing: 0.01em;
   white-space: pre-line;
   color: rgba(255, 255, 255, 0.96);
@@ -129,12 +129,12 @@
 
 /* Text allignment for player names */
 .scene.teams-scene > .scene-content > .active-round-info > .active-round-teams > .active-round-team-a > .active-round-team-a-roster {
-  left: 75px;
+  left: 60px;
   text-align: left;
 }
 
 .scene.teams-scene > .scene-content > .active-round-info > .active-round-teams > .active-round-team-b > .active-round-team-b-roster {
-  left: 175px;
+  right: 50px;
   text-align: left;
 }
 
@@ -146,12 +146,12 @@
 /* Shows Bo3, PA3 etc. */
 .scene.teams-scene > .scene-content > .active-round-info > .active-round-games {
   position: absolute;
-  top: 100px;
+  top: 10px;
   left: 50%;
   width: 270px;
   min-height: 28px;
   transform: translateX(-50%);
-  font-size: 60px;
+  font-size: 90px;
   font-weight: 600;
   text-align: center;
 }
@@ -160,7 +160,7 @@
   position: absolute;
   bottom: 45px;
   left: 52%;
-  width: 830px;
+  width: 960px;
   transform: translateX(-50%);
   color: #fff;
   font-size: 50px;
@@ -196,8 +196,8 @@
 .scene.teams-scene > .scene-content > .teams-background > .active-round-team-a-logo,
 .scene.teams-scene > .scene-content > .teams-background > .active-round-team-b-logo {
   position: absolute;
-  width: 295px;
-  height: 295px;
+  width: 260px;
+  height: 260px;
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
@@ -205,12 +205,12 @@
   pointer-events: none;
 }
 .scene.teams-scene > .scene-content > .teams-background > .active-round-team-a-logo {
-  top: 250px;
+  top: 235px;
   left: 705px;
 }
 .scene.teams-scene > .scene-content > .teams-background > .active-round-team-b-logo {
-  bottom: 170px;
-  right: 715px;
+  bottom:230px;
+  right: 705px;
 }
 
 .scene.teams-scene > .scene-content > .teams-background > .teams-roster::before {

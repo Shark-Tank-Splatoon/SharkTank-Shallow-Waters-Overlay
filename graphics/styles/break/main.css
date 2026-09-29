@@ -43,10 +43,10 @@
 
 .commentator-pfp {
     position: absolute;
-    top: 108px;
+    top: 110px;
     z-index: 2;
-    width: 600px;
-    height: 600px;
+    width: 580px;
+    height: 580px;
     background-color: #b7e6f5;
     background-position: center;
     background-repeat: no-repeat;
@@ -73,43 +73,76 @@
     position: absolute;
     top: 600px;
     z-index: 5;
-    width: 695px;
-    height: 150px;
+    width: 675px;
+    height: 155px;
+    box-sizing: border-box;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    gap: 0;
+    align-items: flex-start;
     justify-content: center;
     color: #fff;
-    font-size: 38px;
+    font-size: 70px;
     font-weight: 700;
-    text-align: center;
+    text-align: left;
     text-shadow: 0 3px 5px rgba(0, 0, 0, 0.75);
 }
 
 .commentator-card-a {
-    left: 190px;
+    left: 150px;
 }
 
 .commentator-card-b {
-    right: 190px;
+    right: 140px;
 }
 
 .commentator-card-name {
+    width: 100%;
     max-width: 100%;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-size: 70px;
+    line-height: 1;
+}
+
+.commentator-card-social {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    font-size: 40px;
+    font-weight: 400;
+    line-height: 1;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-.commentator-card-name:empty {
+.commentator-card-pronouns {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    font-size: 30px;
+    font-weight: 400;
+    line-height: 1;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.commentator-card-name:empty,
+.commentator-card-pronouns:empty,
+.commentator-card-social:empty {
     visibility: hidden;
 }
 
 .next-match-info {
     position: absolute;
-    top: 930px;
+    bottom: 0px;
     left: 50%;
     z-index: 5;
-    width: 1500px;
+    width: 1080px;
     transform: translateX(-50%);
     color: #fff;
     font-size: 36px;
@@ -119,14 +152,14 @@
 }
 
 .next-match-name {
-    margin-bottom: 8px;
-    font-size: 28px;
+    margin-bottom: 4px;
+    font-size: 90px;
 }
 
 .next-match-teams {
     display: flex;
     justify-content: center;
-    gap: 36px;
+    gap: 0px;
 }
 
 .next-match-teams span {

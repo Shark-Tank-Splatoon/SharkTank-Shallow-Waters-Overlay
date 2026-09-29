@@ -41,6 +41,24 @@ function getCommentatorName(value) {
 	return name || social;
 }
 
+function getCommentatorDisplayName(value) {
+	if (!value || typeof value !== 'object') return value ? String(value) : '';
+
+	return value.name || value.displayName || value.realName || value.handle || value.value || '';
+}
+
+function getCommentatorSocial(value) {
+	if (!value || typeof value !== 'object') return '';
+
+	return value.twitter || value.social || value.socialMedia || '';
+}
+
+function getCommentatorPronouns(value) {
+	if (!value || typeof value !== 'object') return '';
+
+	return value.pronouns || value.pronoun || '';
+}
+
 function getCommentatorImage(value) {
 	if (!value || typeof value !== 'object') return '';
 
@@ -75,7 +93,15 @@ function setCommentatorNames(value) {
 		: Array.isArray(value) ? value : [value];
 	document.querySelectorAll('[data-commentator-slot]').forEach(element => {
 		const commentator = commentators[Number(element.dataset.commentatorSlot)];
-		element.textContent = getCommentatorName(commentator);
+		element.textContent = getCommentatorDisplayName(commentator);
+	});
+	document.querySelectorAll('[data-commentator-social]').forEach(element => {
+		const commentator = commentators[Number(element.dataset.commentatorSocial)];
+		element.textContent = getCommentatorSocial(commentator);
+	});
+	document.querySelectorAll('[data-commentator-pronouns]').forEach(element => {
+		const commentator = commentators[Number(element.dataset.commentatorPronouns)];
+		element.textContent = getCommentatorPronouns(commentator);
 	});
 	document.querySelectorAll('[data-commentator-pfp]').forEach(element => {
 		const commentator = commentators[Number(element.dataset.commentatorPfp)];
@@ -107,8 +133,9 @@ function setTeamLogo(selector, team = {}) {
 	const element = document.querySelector(selector);
 	if (!element) return;
 
-	const logoUrl = team?.showLogo && team?.logoUrl ? team.logoUrl : '';
-	element.style.backgroundImage = logoUrl ? `url("${logoUrl}")` : 'none';
+	const fallbackLogoUrl = 'img/2_commbreak/pibble%20(MANDATORY).jpg';
+	const logoUrl = team?.showLogo && team?.logoUrl ? team.logoUrl : fallbackLogoUrl;
+	element.style.backgroundImage = `url("${logoUrl}")`;
 }
 
 function setActiveRoundData(round) {

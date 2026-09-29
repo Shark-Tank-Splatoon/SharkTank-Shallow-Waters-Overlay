@@ -14,6 +14,7 @@
     z-index: 2;
 }
 
+/* Sets background */
 .scene.stages-scene > .scene-content {
     position: absolute;
     inset: 0;
@@ -124,15 +125,6 @@
     text-align: left;
 }
 
-.scene.stages-scene > .scene-content > .stages-grid > .stage > .stage-info > .stage-mode {
-    margin-bottom: 4px;
-    font-size: 22px;
-}
-
-.scene.stages-scene > .scene-content > .stages-grid > .stage > .stage-info.without-mode > .stage-mode {
-    display: none;
-}
-
 .scene.stages-scene > .scene-content > .stages-grid > .stage > .stage-info > .stage-name {
     font-size: 28px;
     font-weight: 700;
@@ -152,37 +144,43 @@
 }
 
 .scene.stages-scene > .scene-content > .stages-grid.bo5 ~ .stages-elements > .stages-labels {
-    --stage-label-offset-y: 50px;
+    --stage-label-offset-x: 7px;
+    --stage-label-offset-y: 30px;
+    --stage-label-font-size: 44px;
+    --stage-label-line-height: 1;
 }
 
 .scene.stages-scene > .scene-content > .stages-grid.bo3 ~ .stages-elements > .stages-labels {
     grid-template-columns: repeat(3, 1fr);
     gap: var(--stage-bo3-gap);
     padding: var(--stage-bo3-padding-top) var(--stage-bo3-padding-x) 180px;
-    --stage-label-offset-y: 0px;
+    --stage-label-offset-x: 5px;
+    --stage-label-offset-y: -10px;
+    --stage-label-font-size: 60px;
 }
 
 .scene.stages-scene > .scene-content > .stages-elements > .stages-labels > .stage-label {
     align-self: end;
     height: 105px;
     margin-bottom: 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     transform: translate(var(--stage-label-offset-x), var(--stage-label-offset-y));
     color: #12343d;
     text-align: center;
 }
 
-.scene.stages-scene > .scene-content > .stages-elements > .stages-labels > .stage-label > .stage-mode {
-    margin-bottom: 4px;
-    font-size: 22px;
-}
-
-.scene.stages-scene > .scene-content > .stages-elements > .stages-labels > .stage-label.without-mode > .stage-mode {
-    display: none;
+.scene.stages-scene > .scene-content > .stages-grid.bo5 ~ .stages-elements > .stages-labels > .stage-label {
+    width: 330px;
+    justify-self: center;
 }
 
 .scene.stages-scene > .scene-content > .stages-elements > .stages-labels > .stage-label > .stage-name {
-    font-size: 28px;
+    width: 100%;
+    font-size: var(--stage-label-font-size);
     font-weight: 700;
+    line-height: var(--stage-label-line-height, 1);
     overflow-wrap: anywhere;
 }
 
@@ -266,9 +264,9 @@
 
 .scene.stages-scene > .scene-content > .stages-scoreboard > .team-names > fitted-text {
     position: absolute;
-    top: 95px;
+    top: 45px;
     width: 700px;
-    height: 90px;
+    height: 100px;
     margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -280,7 +278,7 @@
 /* Score attributes */
 .scene.stages-scene > .scene-content > .stages-scoreboard > .scores {
     position: absolute;
-    top: 65px;
+    top: 20px;
     left: 50%;
     display: grid;
     grid-template-columns: 1fr 0.5fr 1fr;
@@ -295,10 +293,10 @@
 
 .scene.stages-scene > .scene-content > .commentator-names {
     position: absolute;
-    bottom: 45px;
+    bottom: 20px;
     left: 52%;
     z-index: 8;
-    width: 830px;
+    width: 960px;
     transform: translateX(-50%);
     color: #ffffff;
     font-size: 50px;
@@ -322,11 +320,11 @@
 
 /* Adjust team name location here */
 .scene.stages-scene #team-a-name-scoreboard {
-    right: 660px;
+    right: 690px;
     text-align: center;
 }
 
 .scene.stages-scene #team-b-name-scoreboard {
-    left: 660px;
+    left: 690px;
     text-align: center;
 }
