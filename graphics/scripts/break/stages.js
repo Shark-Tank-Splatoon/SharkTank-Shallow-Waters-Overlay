@@ -1,6 +1,7 @@
 const SET_OVER_IMAGE = 'img/8_extra/setover.png';
 const SET_OVER_LABEL = 'Set is Over!';
 const COUNTER_PICK_IMAGE = 'img/4_bo3bo5/bo5/counter%20pick%20image.png';
+const COUNTER_PICK_LABEL = 'Counterpick!';
 
 function getStageValue(value, fallback = '') {
     if (typeof value === 'string' || typeof value === 'number') return String(value);
@@ -8,6 +9,10 @@ function getStageValue(value, fallback = '') {
         return value.name || value.label || value.title || fallback;
     }
     return fallback;
+}
+
+function isUnknownStageName(value) {
+    return /^(unknown|no)\s+(map|stage)$/i.test(String(value || '').trim());
 }
 
 function getTeamScore(team = {}) {
@@ -98,7 +103,10 @@ function setStageText(stage, selector, value) {
 
 function setStageData(stage, game, round) {
     const map = getStageMap(game);
-    const mapName = getStageValue(map, getStageValue(game?.mapName || game?.stageName, 'Unknown map'));
+    const mapNameValue = getStageValue(map, getStageValue(game?.mapName || game?.stageName, ''));
+    const mapName = mapNameValue && !isUnknownStageName(mapNameValue)
+        ? mapNameValue
+        : COUNTER_PICK_LABEL;
     const stageImageKey = getStageImageKey(game);
     const winnerTeam = getStageWinnerTeam(game, round);
     const isCompleted = Boolean(winnerTeam);

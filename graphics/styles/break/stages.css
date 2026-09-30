@@ -144,8 +144,8 @@
 }
 
 .scene.stages-scene > .scene-content > .stages-grid.bo5 ~ .stages-elements > .stages-labels {
-    --stage-label-offset-x: 7px;
-    --stage-label-offset-y: 30px;
+    --stage-label-offset-x: 0px;
+    --stage-label-offset-y: 26px;
     --stage-label-font-size: 44px;
     --stage-label-line-height: 1;
 }

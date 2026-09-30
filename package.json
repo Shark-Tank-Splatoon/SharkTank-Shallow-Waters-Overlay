@@ -22,7 +22,10 @@
         "compatibleRange": "^1.7.0 || ^2.0.0",
         "graphics": [
             {
-                "file": "break.html",
+                "file": [
+                    "break.html",
+                    "start.html"
+                ],
                 "width": 1920,
                 "height": 1080
             }
