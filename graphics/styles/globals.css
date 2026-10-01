@@ -36,6 +36,8 @@ body {
     width: var(--overlay-width);
     height: var(--overlay-height);
     overflow: hidden;
+    opacity: 0;
+    transform: translateX(1920px);
 }
 
 #pibble-image {

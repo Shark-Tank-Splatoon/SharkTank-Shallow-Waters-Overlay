@@ -8,3 +8,4 @@ const localeInfo = nodecg.Replicant('localeInfo', DASHBOARD_BUNDLE_NAME);
 const runtimeConfig = nodecg.Replicant('runtimeConfig', DASHBOARD_BUNDLE_NAME);
 const bracketData = nodecg.Replicant('bracketData', DASHBOARD_BUNDLE_NAME);
 const PibbleModeEnabled = nodecg.Replicant('PibbleModeEnabled', {defaultValue: false});
+const HomelandEnabled = nodecg.Replicant('HomelandEnabled', {defaultValue: false});

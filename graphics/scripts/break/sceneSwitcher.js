@@ -73,55 +73,55 @@ function showCommentator() {
     showScene('.main-scene');
 }
 
-if (activeBreakScene && typeof activeBreakScene.on === 'function') {
-    activeBreakScene.on('change', (newValue, oldValue) => {
-        if (!oldValue) {
-            switch (newValue) {
-                case 'main':
-                    hideStages();
-                    hideTeams();
-                    break;
-                case 'teams':
-                    hideMainScene();
-                    hideStages();
-                    break;
-                case 'stages':
-                    hideMainScene();
-                    hideTeams();
-                    break;
-                default:
-            }
-        } else {
-            switch (oldValue) {
-                case 'main':
-                    hideCommentator();
-                    break;
-                case 'teams':
-                    hideTeams();
-                    break;
-                case 'stages':
-                    hideStages();
-                    break;
-                default:
-            }
-        }
+let currentScene;
 
-        switch (newValue) {
+function updateScene(newValue, oldValue) {
+    if (newValue === currentScene) return;
+
+    currentScene = newValue;
+
+    if (!oldValue) {
+        hideMainScene();
+        hideTeams();
+        hideStages();
+    } else {
+        switch (oldValue) {
             case 'main':
-                hideInfoBar();
-                setInfoSwitchAnim();
-                showCommentator();
+                hideCommentator();
                 break;
             case 'teams':
-                showInfoBar();
-                showTeams();
+                hideTeams();
                 break;
             case 'stages':
-                showInfoBar();
-                showStages();
+                hideStages();
                 break;
             default:
         }
-    });
+    }
+
+    switch (newValue) {
+        case 'main':
+            hideInfoBar();
+            setInfoSwitchAnim();
+            showCommentator();
+            break;
+        case 'teams':
+            showInfoBar();
+            showTeams();
+            break;
+        case 'stages':
+            showInfoBar();
+            showStages();
+            break;
+        default:
+    }
+}
+
+if (activeBreakScene && typeof activeBreakScene.on === 'function') {
+    activeBreakScene.on('change', updateScene);
+
+    if (activeBreakScene.value) {
+        updateScene(activeBreakScene.value);
+    }
 }
 

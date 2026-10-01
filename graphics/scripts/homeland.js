@@ -1,11 +1,3 @@
-HomelandEnabled.on('change', newValue => {
-    if (newValue) {
-        enableHomeland();
-    } else {
-        disableHomeland();
-    }
-});
-
 const homelandImage = document.getElementById('homeland-image');
 
 function enableHomeland() {
@@ -14,4 +6,17 @@ function enableHomeland() {
 
 function disableHomeland() {
     homelandImage.hidden = true;
+}
+
+function updateHomeland(newValue) {
+    if (newValue) {
+        enableHomeland();
+    } else {
+        disableHomeland();
+    }
+}
+
+if (HomelandEnabled && typeof HomelandEnabled.on === 'function') {
+    HomelandEnabled.on('change', updateHomeland);
+    updateHomeland(HomelandEnabled.value);
 }

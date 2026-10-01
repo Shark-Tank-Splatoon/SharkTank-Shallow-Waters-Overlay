@@ -3,17 +3,36 @@
     inset: 0;
 }
 
-.scene.starting-soon > .scene-content {
+.scene.starting-soon > .scene-stuff {
     position: absolute;
     inset: 0;
     width: 1920px;
     height: 1080px;
     overflow: hidden;
-    background: #050b46
 }
 
-.scene.starting-soon > .scene-content > img {
+.scene.starting-soon > .scene-stuff > .title {
     position: absolute;
+    z-index: 2;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    pointer-events: none;
+    background: url("../../img/1_startingsoon/titlw.png") center / 1920px 1080px no-repeat;
+}
+
+.scene.starting-soon > .scene-stuff > .swimming-shark {
+    position: absolute;
+    z-index: 1;
+    inset: 0;
+    background: url("../../img/1_startingsoon/updated%20spin.gif");
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#homeland-image {
+    position: fixed;
+    z-index: 3;
     inset: 0;
     width: 1920px;
     height: 1080px;
