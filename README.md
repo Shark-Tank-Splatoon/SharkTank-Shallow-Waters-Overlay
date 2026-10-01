@@ -11,24 +11,24 @@ A very big thank you to IPL for creating and open-sourcing their Overlay and Ove
 
 ## Current State
 
-- Mostly working Break scenes, aka: Stages, Teams, and "intermission"
+- Everything works, graphics are in place, images show correctly, info updates as it should
 
 - Does work and uses IPL-Overlay-Control as its requirement for Sendou stuff and like everything else that isn't graphics
 
 ## To-Dos
 
 - ASAP:
-  ~~- Add the Correct Font~~
-  - Readjust Text Fields with correct Font, size, and positioning
+  - ~~Add the Correct Font~~
+  - ~~Readjust Text Fields with correct Font, size, and positioning~~ Needs correct Colors
   
 - Do in-game scene
   - Only needs to be put together, since logic should already be in place
 
 - Starting Soon Scene
-  - Only needs to be put together, since it's a static page
+  - ~~Only needs to be put together, since it's a static page~~
 
-- More Scene Toggles
+- More Scene Toggles (might not be necessary anymore)
 
-- Homeland Edition Toggle in Shark Tank Tab
+- ~~Homeland Edition Toggle in Shark Tank Tab~~
 
 - Replay scene? idk how the streamers do that one so 🤷
