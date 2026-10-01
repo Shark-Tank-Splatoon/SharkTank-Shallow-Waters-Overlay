@@ -6,9 +6,6 @@
 .scene.starting-soon > .scene-stuff {
     position: absolute;
     inset: 0;
-    width: 1920px;
-    height: 1080px;
-    overflow: hidden;
 }
 
 .scene.starting-soon > .scene-stuff > .title {
@@ -23,11 +20,14 @@
 
 .scene.starting-soon > .scene-stuff > .swimming-shark {
     position: absolute;
-    z-index: 1;
-    inset: 0;
-    background: url("../../img/1_startingsoon/updated%20spin.gif");
-    background-position: center;
-    background-repeat: no-repeat;
+    z-index: 4;
+    width: 576px;
+    height: 576px;
+    right: 200px;
+    top: 100px;
+    background: url("../../img/1_startingsoon/updated%20spin.gif")
+        center / 576px 576px no-repeat;
+    pointer-events: none;
 }
 
 #homeland-image {

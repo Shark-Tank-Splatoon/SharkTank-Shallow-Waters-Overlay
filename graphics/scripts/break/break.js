@@ -141,13 +141,23 @@ function setTeamLogo(selector, team = {}) {
 function setActiveRoundData(round) {
 	if (!round) return;
 
+	const teamA = round?.teamA || {};
+	const teamB = round?.teamB || {};
+	const match = round?.match || {};
+
+	setText('[data-active-round-match]', match.name || '');
+	setText('[data-active-round-team-a]', teamA.name || '');
+	setText('[data-active-round-team-a-roster]', getPlayerNames(teamA));
+	setText('[data-active-round-team-b]', teamB.name || '');
+	setText('[data-active-round-team-b-roster]', getPlayerNames(teamB));
+	setText('[data-active-round-score-a]', String(teamA.score ?? 0));
+	setText('[data-active-round-score-b]', String(teamB.score ?? 0));
+	setText('[data-active-round-games]', getRoundFormatLabel(round));
+
 	const teamsScene = document.querySelector('.teams-scene');
 	const teamsRoster = document.querySelector('.teams-roster');
 	if (!teamsScene || !teamsRoster) return;
 
-	const teamA = round?.teamA || {};
-	const teamB = round?.teamB || {};
-	const match = round?.match || {};
 	const gameCount = Array.isArray(round?.games) ? round.games.length : 0;
 
 	teamsScene.dataset.matchName = match.name || '';
@@ -159,15 +169,6 @@ function setActiveRoundData(round) {
 	teamsRoster.dataset.teamBName = teamB.name || '';
 	teamsRoster.dataset.teamBScore = String(teamB.score ?? 0);
 
-	setText('[data-active-round-match]', match.name || '');
-	setText('[data-active-round-team-a]', teamA.name || '');
-	setText('[data-active-round-team-a-roster]', getPlayerNames(teamA));
-	setText('[data-active-round-team-b]', teamB.name || '');
-	setText('[data-active-round-team-b-roster]', getPlayerNames(teamB));
-	setText('[data-active-round-score-a]', String(teamA.score ?? 0));
-	setText('[data-active-round-score-b]', String(teamB.score ?? 0));
-	setText('[data-active-round-games]', getRoundFormatLabel(round));
-
 	setTeamLogo('[data-active-round-team-a-logo]', teamA);
 	setTeamLogo('[data-active-round-team-b-logo]', teamB);
 
@@ -177,6 +178,7 @@ function setActiveRoundData(round) {
 
 if (activeRound && typeof activeRound.on === 'function') {
 	activeRound.on('change', setActiveRoundData);
+	setActiveRoundData(activeRound.value);
 }
 
 if (nextRound && typeof nextRound.on === 'function') {

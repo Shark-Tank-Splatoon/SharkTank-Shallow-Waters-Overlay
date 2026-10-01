@@ -1,0 +1,67 @@
+.scene > .scene-stuff {
+    position: absolute;
+    background: url("../../img/5_in_game/in%20game.png");
+    width: 1920px;
+    height: 1080px;
+    background-size: 1920px 1080px;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.scene > .scene-stuff > .commentator-names {
+    position: absolute;
+    bottom: 30px;
+    left: 23.25%;
+    z-index: 1;
+    width: 720px;
+    transform: translateX(-50%);
+    color: #ffffff;
+    font-size: 50px;
+    font-weight: 600;
+    text-align: center;
+    text-shadow: 0 2px 6px #000;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.scene > .scene-stuff > .commentator-names > .commentator-names-track {
+    display: inline-block;
+    white-space: pre;
+    animation: commentator-names-scroll 24s linear infinite;
+}
+
+@keyframes commentator-names-scroll {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+.scene > .scene-stuff > .active-round-info > .active-round-teams {
+  position: absolute;
+  inset: 0;
+}
+
+/* Container for Team Names */
+.scene > .scene-stuff > .active-round-info > .active-round-teams > .active-round-team {
+  position: absolute;
+  width: 470px;
+  height: 70px;
+  display: flex;
+  align-items: left;
+  min-width: 0;
+  color: white;
+  font-size: 55px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
+  text-align: left;
+}
+
+/* Positional Adjustment for the Team Names */
+.scene > .scene-stuff > .active-round-info > .active-round-teams > .active-round-team-a {
+  left: 25px;
+}
+
+.scene > .scene-stuff > .active-round-info > .active-round-teams > .active-round-team-b {
+  left: 25px;
+  top: 90px;
+}
