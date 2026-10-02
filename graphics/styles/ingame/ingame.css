@@ -45,8 +45,9 @@
   position: absolute;
   width: 470px;
   height: 70px;
+  top: 20px;
   display: flex;
-  align-items: left;
+  align-items: center;
   min-width: 0;
   color: white;
   font-size: 55px;
@@ -56,6 +57,21 @@
   text-align: left;
 }
 
+.scene > .scene-stuff > .active-round-info > .active-round-teams > .active-round-team > span:first-child {
+  flex: 1 1 auto;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.scene > .scene-stuff > .active-round-info > .active-round-teams > .active-round-team > .active-round-team-score {
+  flex: 0 0 auto;
+  text-align: center;
+  position: relative;
+  left: 60px;
+}
+
 /* Positional Adjustment for the Team Names */
 .scene > .scene-stuff > .active-round-info > .active-round-teams > .active-round-team-a {
   left: 25px;
@@ -63,5 +79,5 @@
 
 .scene > .scene-stuff > .active-round-info > .active-round-teams > .active-round-team-b {
   left: 25px;
-  top: 90px;
+  top: 110px;
 }
