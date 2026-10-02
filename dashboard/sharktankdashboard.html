@@ -6,10 +6,26 @@
 <head>
     <meta charset="UTF-8">
     <title>Shark Tank Dashboard</title>
+    <link rel="stylesheet" href="sharktankdashboard.css">
 </head>
 <body>
-    <input type="checkbox" id="pibble-mode-toggle" />Pibble Mode <!-- this is how you add a checkbox and link it to the created id in the js file -->
-    <input type="checkbox" id="homeland-toggle" />Homeland Edition
+    <label class="mode-toggle">
+        <input type="checkbox" id="pibble-mode-toggle" />
+        Pibble Mode
+    </label>
+    <label class="mode-toggle">
+        <input type="checkbox" id="homeland-toggle" />
+        Homeland Edition
+    </label>
+
+    <fieldset class="fun-fact-controls">
+        <legend>Fun Fact</legend>
+        <textarea id="fun-fact-text" placeholder="Enter a fun fact"></textarea>
+        <div class="fun-fact-switch" role="group" aria-label="Fun fact visibility">
+            <button type="button" id="fun-fact-show">SHOW</button>
+            <button type="button" id="fun-fact-hide">HIDE</button>
+        </div>
+    </fieldset>
 
     <script src="sharktankdashboard.js"></script>
 </body>

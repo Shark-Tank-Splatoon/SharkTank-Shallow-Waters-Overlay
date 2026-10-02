@@ -9,3 +9,4 @@ const runtimeConfig = nodecg.Replicant('runtimeConfig', DASHBOARD_BUNDLE_NAME);
 const bracketData = nodecg.Replicant('bracketData', DASHBOARD_BUNDLE_NAME);
 const PibbleModeEnabled = nodecg.Replicant('PibbleModeEnabled', {defaultValue: false});
 const HomelandEnabled = nodecg.Replicant('HomelandEnabled', {defaultValue: false});
+const FunFactData = nodecg.Replicant('FunFactData', {defaultValue: {text: '', isVisible: false}});

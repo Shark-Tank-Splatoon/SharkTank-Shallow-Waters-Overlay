@@ -1,0 +1,106 @@
+:root {
+    --dashboard-bg: #222d40;
+    --panel-bg: #2d3a52;
+    --input-bg: #182131;
+    --input-border: #3d4b65;
+    --text: #f4f6fb;
+    --muted-text: #aab5c8;
+    --accent: #6356c6;
+    --show: #00a957;
+    --show-hover: #00bd63;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    min-width: 280px;
+    padding: 12px;
+    background: var(--dashboard-bg);
+    color: var(--text);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.mode-toggle {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    margin: 0 12px 12px 0;
+    color: var(--text);
+}
+
+.mode-toggle input {
+    accent-color: var(--accent);
+}
+
+.fun-fact-controls {
+    max-width: 420px;
+    margin: 4px 0 0;
+    padding: 10px;
+    border: 0;
+    border-radius: 6px;
+    background: var(--panel-bg);
+}
+
+.fun-fact-controls legend {
+    padding: 0 4px;
+    color: var(--text);
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.fun-fact-controls textarea {
+    display: block;
+    width: 100%;
+    min-height: 90px;
+    padding: 9px 10px;
+    border: 1px solid var(--input-border);
+    border-radius: 4px;
+    background: var(--input-bg);
+    color: var(--text);
+    font: inherit;
+    line-height: 1.3;
+    resize: vertical;
+}
+
+.fun-fact-controls textarea:focus {
+    outline: 2px solid var(--accent);
+    outline-offset: 1px;
+}
+
+.fun-fact-switch {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+    margin-top: 8px;
+}
+
+.fun-fact-switch button {
+    min-height: 38px;
+    border: 0;
+    border-radius: 4px;
+    background: var(--input-bg);
+    color: var(--muted-text);
+    cursor: pointer;
+    font: inherit;
+    font-weight: 700;
+}
+
+.fun-fact-switch button:hover,
+.fun-fact-switch button[aria-pressed="true"] {
+    background: var(--accent);
+    color: #fff;
+}
+
+.fun-fact-switch button:first-child:hover,
+.fun-fact-switch button:first-child[aria-pressed="true"] {
+    background: var(--show-hover);
+}
+
+.fun-fact-switch button:focus-visible {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}

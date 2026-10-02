@@ -13,7 +13,7 @@
     bottom: 30px;
     left: 23.25%;
     z-index: 1;
-    width: 720px;
+    width: 560px;
     transform: translateX(-50%);
     color: #ffffff;
     font-size: 50px;
@@ -28,6 +28,48 @@
     display: inline-block;
     white-space: pre;
     animation: commentator-names-scroll 24s linear infinite;
+}
+
+.scene > .scene-stuff > .fun-fact {
+    position: absolute;
+    right: -120px;
+    bottom: -120px;
+    z-index: 2;
+    width: 720px;
+    aspect-ratio: 983 / 655;
+    opacity: 0;
+    transform: translateY(100%);
+    pointer-events: none;
+    transition: transform 0.5s ease, opacity 0.5s ease;
+}
+
+.scene > .scene-stuff > .fun-fact.is-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.scene > .scene-stuff > .fun-fact > img {
+    display: block;
+    width: 75%;
+    height: 75%;
+}
+
+.scene > .scene-stuff > .fun-fact > .fun-fact-text {
+  position: absolute;
+  top: 26.25%;
+  left: 7.5%;
+  width: 60%;
+  height: 41.25%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  font-size: 42px;
+  font-weight: 600;
+  line-height: 1.15;
+  text-align: center;
+  text-shadow: 0 2px 3px #000;
+  overflow-wrap: anywhere;
 }
 
 @keyframes commentator-names-scroll {
