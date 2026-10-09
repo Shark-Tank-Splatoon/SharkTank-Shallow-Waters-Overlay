@@ -32,14 +32,16 @@ A very big thank you to IPL for creating and open-sourcing their Overlay and Ove
 - ~~Do in-game scene~~
   - ~~Only needs to be put together, since logic should already be in place~~
 
-- Starting Soon Scene
+- ~~Starting Soon Scene~~
   - ~~Only needs to be put together, since it's a static page~~
 
-- More Scene Toggles (might not be necessary anymore)
+- ~~More Scene Toggles (might not be necessary anymore)~~
 
 - ~~Homeland Edition Toggle in Shark Tank Tab~~
 
-- Replay scene? idk how the streamers do that one so 🤷
+- ~~Replay scene? idk how the streamers do that one so 🤷~~
+
+- End Scene. Unsure how to do it so might not happen soon.
 
 ## Future Plans
 

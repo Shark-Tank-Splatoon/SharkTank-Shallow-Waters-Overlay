@@ -35,6 +35,11 @@
                 "file": "ingame.html",
                 "width": 1920,
                 "height": 1080
+            },
+            {
+                "file": "replay.html",
+                "width": 1920,
+                "height": 1080
             }
         ],
         "dashboardPanels": [
