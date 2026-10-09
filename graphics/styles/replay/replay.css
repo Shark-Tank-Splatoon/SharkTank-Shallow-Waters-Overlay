@@ -33,12 +33,12 @@
 
 .replay-henry {
     z-index: 1;
-    background-position: bottom right;
+    background-position: calc(70%) bottom;
     background-image: url("../../img/6_REPLAAYY/HENRY SLEEP/henry snooze.gif");
 }
 
 .replay-wallace {
     z-index: 1;
-    background-position: bottom;
+    background-position: bottom right;
     background-image: url("../../img/6_REPLAAYY/WALLACE SPARKLE/wallace sparkle gif.gif");
 }
