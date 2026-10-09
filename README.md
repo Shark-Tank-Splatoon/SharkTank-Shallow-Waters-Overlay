@@ -32,3 +32,8 @@ A very big thank you to IPL for creating and open-sourcing their Overlay and Ove
 - ~~Homeland Edition Toggle in Shark Tank Tab~~
 
 - Replay scene? idk how the streamers do that one so 🤷
+
+## Future Plans
+
+- Rewrite all js to TypeScript
+- Make new overlays for our other events (Other Repo)
