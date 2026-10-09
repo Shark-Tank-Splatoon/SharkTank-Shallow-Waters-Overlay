@@ -11,7 +11,7 @@
     position: absolute;
     inset: 0;
     background-repeat: no-repeat;
-    background-position: bottom;
+    background-size: 25%;
     pointer-events: none;
     user-select: none;
 }
@@ -27,20 +27,18 @@
 
 .replay-barry {
     z-index: 1;
-    background-size: 25%;
     background-position: bottom left;
     background-image: url("../../img/6_REPLAAYY/barry blink/barry blink gif.gif");
 }
 
 .replay-henry {
     z-index: 1;
-    background-size: 25%;
     background-position: bottom right;
     background-image: url("../../img/6_REPLAAYY/HENRY SLEEP/henry snooze.gif");
 }
 
 .replay-wallace {
     z-index: 1;
-    background-size: 25%;
+    background-position: bottom;
     background-image: url("../../img/6_REPLAAYY/WALLACE SPARKLE/wallace sparkle gif.gif");
 }
