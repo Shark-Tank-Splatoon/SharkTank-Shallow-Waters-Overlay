@@ -40,6 +40,11 @@
                 "file": "replay.html",
                 "width": 1920,
                 "height": 1080
+            },
+            {
+                "file": "end.html",
+                "width": 1920,
+                "height": 1080
             }
         ],
         "dashboardPanels": [
@@ -48,6 +53,14 @@
                 "title": "Shark Tank Settings",
                 "width": 2,
                 "file": "sharktankdashboard.html",
+                "workspace": "sharktank",
+                "headerColor": "#1E90FF"
+            },
+            {
+                "name": "EndSceneCommentators",
+                "title": "End Scene Commentators",
+                "width": 2,
+                "file": "end-scene-commentators/end-scene-commentators.html",
                 "workspace": "sharktank",
                 "headerColor": "#1E90FF"
             }

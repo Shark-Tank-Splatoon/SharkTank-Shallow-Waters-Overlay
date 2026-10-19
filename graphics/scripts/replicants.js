@@ -10,3 +10,12 @@ const bracketData = nodecg.Replicant('bracketData', DASHBOARD_BUNDLE_NAME);
 const PibbleModeEnabled = nodecg.Replicant('PibbleModeEnabled', {defaultValue: false});
 const HomelandEnabled = nodecg.Replicant('HomelandEnabled', {defaultValue: false});
 const FunFactData = nodecg.Replicant('FunFactData', {defaultValue: {text: '', isVisible: false}});
+const EndCommentators = nodecg.Replicant('EndCommentators', {
+    defaultValue: [
+        {name: '', pfpUrl: ''},
+        {name: '', pfpUrl: ''},
+        {name: '', pfpUrl: ''},
+        {name: '', pfpUrl: ''}
+    ]
+});
+const EndWinnerTeam = nodecg.Replicant('EndWinnerTeam', {defaultValue: ''});

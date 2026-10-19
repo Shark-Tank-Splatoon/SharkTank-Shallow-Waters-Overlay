@@ -47,3 +47,4 @@ A very big thank you to IPL for creating and open-sourcing their Overlay and Ove
 
 - Rewrite all js to TypeScript
 - Make new overlays for our other events (Other Repo)
+- Switch from set images to html/js based containers for Team related stuff

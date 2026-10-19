@@ -1,0 +1,122 @@
+.scene.end-scene {
+    position: absolute;
+    inset: 0;
+    z-index: 2;
+}
+
+.scene.end-scene > .scene-content {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    overflow: hidden;
+    background: #03135b;
+    opacity: 1;
+    transform: none;
+}
+
+.scene.end-scene .end-background,
+.scene.end-scene .end-elements,
+.scene.end-scene .end-title-elements {
+    position: absolute;
+    inset: 0;
+    width: 1920px;
+    height: 1080px;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1920px 1080px;
+    pointer-events: none;
+}
+
+.end-background {
+    z-index: 1;
+    background-image: url("../../img/7_final/SW%20final%20bg.png");
+}
+
+.end-commentators {
+    position: absolute;
+    top: 180px;
+    left: 1070px;
+    z-index: 4;
+    width: 820px;
+    height: 860px;
+}
+
+.end-commentator {
+    position: absolute;
+    left: 0;
+    display: flex;
+    align-items: center;
+    width: 820px;
+    height: 180px;
+}
+
+.end-commentator[hidden] {
+    display: none;
+}
+
+.end-commentator:nth-child(1) { top: 0; }
+.end-commentator:nth-child(2) { top: 235px; }
+.end-commentator:nth-child(3) { top: 470px; }
+.end-commentator:nth-child(4) { top: 705px; }
+
+.end-commentator-pfp {
+    width: 175px;
+    height: 175px;
+    background-color: #081b56;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.end-commentator-name {
+    width: 580px;
+    margin-left: 24px;
+    overflow: hidden;
+    color: #fff;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 1;
+    text-overflow: ellipsis;
+    text-shadow: 0 3px 6px rgba(0, 0, 0, 0.8);
+    white-space: nowrap;
+}
+
+.end-elements {
+    z-index: 3;
+    background-image: url("../../img/7_final/thank%20you%20elements.png");
+}
+
+.end-winner-team {
+    position: absolute;
+    bottom: 30px;
+    left: 145px;
+    z-index: 4;
+    width: 850px;
+    height: 95px;
+    overflow: hidden;
+    color: #fff;
+    font-size: 70px;
+    font-weight: 700;
+    line-height: 95px;
+    text-align: center;
+    text-overflow: ellipsis;
+    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.75);
+    white-space: nowrap;
+}
+
+.end-pfp-overlay {
+    position: absolute;
+    top: 45px;
+    right: auto;
+    bottom: auto;
+    left: 28px;
+    width: 1920px;
+    height: 1080px;
+    z-index: 5;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 1920px 1080px;
+    pointer-events: none;
+    background-image: url("../../img/7_final/thank_you_pfp_overlay.png");
+}
