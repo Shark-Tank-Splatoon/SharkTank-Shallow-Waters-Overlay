@@ -17,6 +17,29 @@ function isStageGamePlayed(game) {
     return game?.winner === 'alpha' || game?.winner === 'bravo';
 }
 
+function getMatchType(round = {}) {
+    return String(round?.match?.type || round?.match?.playType || '').toUpperCase();
+}
+
+function isBestOfMatch(round = {}) {
+    const matchType = getMatchType(round);
+    return matchType === 'BEST_OF'
+        || /^BEST_OF(?:_)?(?:3|5)$/.test(matchType)
+        || /^BO(?:3|5)?$/.test(matchType);
+}
+
+function getBestOfWinTarget(gameCount) {
+    return gameCount <= 3 ? 2 : 3;
+}
+
+function getStageCount(round, games) {
+    if (!isBestOfMatch(round)) return games.length || 5;
+
+    const hasBo5Score = (round?.teamA?.score || 0) >= 3
+        || (round?.teamB?.score || 0) >= 3;
+    return games.length >= 5 || hasBo5Score ? 5 : 3;
+}
+
 function getStageWinnerTeam(game, round) {
     const teamA = round?.teamA || {};
     const teamB = round?.teamB || {};
@@ -86,12 +109,16 @@ function setStagesData(round = {}) {
 
     const games = Array.isArray(round?.games) ? round.games : [];
     const stageElements = Array.from(stagesGrid.querySelectorAll(':scope > [data-stage]'));
-    const gameCount = games.length || 5;
+    const gameCount = getStageCount(round, games);
     const formatClass = gameCount <= 3 ? 'bo3' : 'bo5';
     const teamAScore = round?.teamA?.score || 0;
     const teamBScore = round?.teamB?.score || 0;
-    const matchIsOver = teamAScore >= 3 || teamBScore >= 3;
-    const isBo5 = games.length >= 5;
+    const isBestOf = isBestOfMatch(round);
+    const bestOfWinTarget = getBestOfWinTarget(gameCount);
+    const matchIsOver = isBestOf
+        && (teamAScore >= bestOfWinTarget
+            || teamBScore >= bestOfWinTarget
+            || round?.match?.isCompleted === true);
 
     stagesGrid.classList.remove('bo3', 'bo5');
     stagesGrid.classList.add(formatClass);
@@ -99,7 +126,7 @@ function setStagesData(round = {}) {
 
     stageElements.forEach((stage, index) => {
         const game = games[index];
-        const showSetOver = matchIsOver && isBo5 && !isStageGamePlayed(game);
+        const showSetOver = matchIsOver && !isStageGamePlayed(game);
         stage.style.display = game || showSetOver ? '' : 'none';
         if (showSetOver) {
             setStageData(stage, {}, round);

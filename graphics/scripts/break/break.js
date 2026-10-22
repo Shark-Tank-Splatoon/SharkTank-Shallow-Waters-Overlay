@@ -16,13 +16,18 @@ function getRoundFormatLabel(round = {}) {
 	const gameCount = Array.isArray(round?.games) ? round.games.length : 0;
 	if (gameCount === 0) return '';
 
-	switch (round?.match?.type) {
+	const matchType = String(round?.match?.type || round?.match?.playType || '').toUpperCase();
+
+	switch (matchType) {
 		case 'PLAY_ALL':
 			return `PA${gameCount}`;
 		case 'BEST_OF':
 			return `Bo${gameCount}`;
 		default:
-			return '';
+			if (/^(?:BEST_OF_?|BO)(?:3|5)$/.test(matchType)) {
+				return `Bo${matchType.slice(-1)}`;
+			}
+			return matchType.startsWith('PLAY_ALL') ? `PA${gameCount}` : '';
 	}
 }
 
