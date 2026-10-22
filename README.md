@@ -15,6 +15,7 @@ A very big thank you to IPL for creating and open-sourcing their Overlay and Ove
 
 - Homeland Edition Toggle (adds the Homeland logo to the Starting soon Scene)
 - A Fun Fact box with custom Text input
+- Custom Text and image input for the Final Scene
 
 ## Current State
 
