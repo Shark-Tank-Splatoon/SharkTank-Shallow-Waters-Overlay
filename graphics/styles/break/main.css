@@ -81,11 +81,14 @@
     gap: 0;
     align-items: flex-start;
     justify-content: center;
-    color: #fff;
+    color: #f3ecee;
     font-size: 70px;
     font-weight: 700;
     text-align: left;
-    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.75);
+    -webkit-text-stroke: 20px #0946d5;
+    white-space: nowrap;
+    paint-order: stroke fill;
+    stroke-linejoin: round;
 }
 
 .commentator-card-a {
@@ -144,11 +147,14 @@
     z-index: 5;
     width: 1080px;
     transform: translateX(-50%);
-    color: #fff;
+    color: #f3ecee;
     font-size: 36px;
     font-weight: 700;
     text-align: center;
-    text-shadow: 0 3px 5px rgba(0, 0, 0, 0.8);
+    -webkit-text-stroke: 20px #0946d5;
+    white-space: nowrap;
+    paint-order: stroke fill;
+    stroke-linejoin: round;
 }
 
 .next-match-name {

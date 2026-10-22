@@ -8,6 +8,11 @@ function getEndCommentatorPfp(commentator) {
     return commentator.pfpUrl || '';
 }
 
+function getEndCommentatorSocial(commentator) {
+    if (!commentator || typeof commentator !== 'object') return '';
+    return commentator.socialMedia || commentator.social || commentator.twitter || '';
+}
+
 function setBackgroundImage(element, imageUrl) {
     if (!element) return;
 
@@ -27,13 +32,16 @@ function setEndCommentators(value) {
         const index = Number(element.dataset.endCommentator);
         const commentator = commentators[index] || {};
         const name = getEndCommentatorName(commentator);
+        const social = getEndCommentatorSocial(commentator);
         const pfp = getEndCommentatorPfp(commentator);
         const nameElement = element.querySelector('[data-end-commentator-name]');
+        const socialElement = element.querySelector('[data-end-commentator-social]');
         const pfpElement = element.querySelector('[data-end-commentator-pfp]');
 
         if (nameElement) nameElement.textContent = name;
+        if (socialElement) socialElement.textContent = social;
         setBackgroundImage(pfpElement, pfp);
-        element.hidden = !name && !pfp;
+        element.hidden = !name && !social && !pfp;
     });
 }
 

@@ -12,10 +12,10 @@ const HomelandEnabled = nodecg.Replicant('HomelandEnabled', {defaultValue: false
 const FunFactData = nodecg.Replicant('FunFactData', {defaultValue: {text: '', isVisible: false}});
 const EndCommentators = nodecg.Replicant('EndCommentators', {
     defaultValue: [
-        {name: '', pfpUrl: ''},
-        {name: '', pfpUrl: ''},
-        {name: '', pfpUrl: ''},
-        {name: '', pfpUrl: ''}
+        {name: '', socialMedia: '', pfpUrl: ''},
+        {name: '', socialMedia: '', pfpUrl: ''},
+        {name: '', socialMedia: '', pfpUrl: ''},
+        {name: '', socialMedia: '', pfpUrl: ''}
     ]
 });
 const EndWinnerTeam = nodecg.Replicant('EndWinnerTeam', {defaultValue: ''});

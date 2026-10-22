@@ -19,7 +19,6 @@
     font-weight: 600;
     color: white;
     text-align: center;
-    text-shadow: 0 2px 6px #000;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -68,7 +67,6 @@
   font-weight: 600;
   line-height: 1.15;
   text-align: center;
-  text-shadow: 0 2px 3px #000;
   overflow-wrap: anywhere;
 }
 
@@ -87,15 +85,14 @@
   position: absolute;
   width: 470px;
   height: 70px;
-  top: 17px;
+  top: 22px;
   display: flex;
   align-items: center;
   min-width: 0;
-  color: white;
+  color: #000000;
   font-size: 55px;
   font-weight: 700;
   letter-spacing: 0.02em;
-  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.45);
   text-align: left;
 }
 
@@ -110,9 +107,38 @@
 .scene > .scene-stuff > .active-round-info > .active-round-teams > .active-round-team > .active-round-team-score {
   flex: 0 0 auto;
   position: relative;
-  font-size: 45px;
-  left: 59px;
-  top: 3px;
+  font-size: var(--active-round-score-font-size);
+  left: var(--active-round-score-left);
+  bottom: var(--active-round-score-bottom);
+  color: var(--active-round-score-color);
+  -webkit-text-stroke: var(--active-round-score-stroke-width) var(--active-round-score-stroke-color);
+  white-space: var(--active-round-score-white-space);
+  paint-order: var(--active-round-score-paint-order);
+  stroke-linejoin: var(--active-round-score-stroke-linejoin);
+}
+
+.scene > .scene-stuff > .active-round-info > .active-round-teams > .active-round-team-a {
+  --active-round-score-font-size: 45px;
+  --active-round-score-left: 59px;
+  --active-round-score-bottom: 2px;
+  --active-round-score-color: inherit;
+  --active-round-score-stroke-width: 5px;
+  --active-round-score-stroke-color: #7a520e;
+  --active-round-score-white-space: nowrap;
+  --active-round-score-paint-order: stroke fill;
+  --active-round-score-stroke-linejoin: round;
+}
+
+.scene > .scene-stuff > .active-round-info > .active-round-teams > .active-round-team-b {
+  --active-round-score-font-size: 45px;
+  --active-round-score-left: 59px;
+  --active-round-score-bottom: 2px;
+  --active-round-score-color: inherit;
+  --active-round-score-stroke-width: 5px;
+  --active-round-score-stroke-color: #5d96f6;
+  --active-round-score-white-space: nowrap;
+  --active-round-score-paint-order: stroke fill;
+  --active-round-score-stroke-linejoin: round;
 }
 
 /* Positional Adjustment for the Team Names */
@@ -122,5 +148,5 @@
 
 .scene > .scene-stuff > .active-round-info > .active-round-teams > .active-round-team-b {
   left: 25px;
-  top: 105px;
+  top: 110px;
 }

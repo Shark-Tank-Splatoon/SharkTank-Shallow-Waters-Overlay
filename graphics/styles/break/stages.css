@@ -207,7 +207,11 @@
     align-items: center;
     justify-content: center;
     transform: translate(var(--stage-label-offset-x), var(--stage-label-offset-y));
-    color: #12343d;
+    color: #ffff;
+    /*white-space: nowrap;*/
+    -webkit-text-stroke: 13px #0c1e51;
+    paint-order: stroke fill;
+    stroke-linejoin: round;
     text-align: center;
 }
 
@@ -291,9 +295,8 @@
     width: 1000px;
     height: 175px;
     transform: translateX(-50%);
-    color: #fff;
+    color: #000000;
     text-align: center;
-    text-shadow: 0 2px 3px #000;
     pointer-events: none;
 }
 
@@ -310,7 +313,11 @@
     margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: #ffff;
+    -webkit-text-stroke: 13px #051b50;
     white-space: nowrap;
+    paint-order: stroke fill;
+    stroke-linejoin: round;
     font-size: 60px;
     font-weight: 700;
 }
@@ -342,8 +349,10 @@
     font-size: 50px;
     font-weight: 600;
     text-align: center;
-    text-shadow: 0 2px 6px #000;
+    -webkit-text-stroke: 12px #051b50;
     white-space: nowrap;
+    paint-order: stroke fill;
+    stroke-linejoin: round;
     overflow: hidden;
 }
 
