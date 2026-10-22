@@ -3,11 +3,14 @@ A [NodeCG](http://github.com/nodecg/nodecg) bundle, used for the Shark Tank Shal
 
 ## Install
 
+- Install [`Node.js`](https://nodejs.org/en/download) (v22.23.4 as of 22.10.2026), use the Windows Installer, makes your life alot easier.
+- 
 - Install [`ipl-overlay-controls.`](https://github.com/inkfarer/ipl-overlay-controls) via [`NCGMGR`](https://github.com/IPLSplatoon/NCGMGR) (Look at their instructions)
 
 - Inside of NCGMGR, press "```Add Bundle+```" then paste in: ```Shark-Tank-Splatoon/SharkTank-Shallow-Waters-Overlay```
 
 - Press Install :thumbsup:
+
 A very big thank you to IPL for creating and open-sourcing their Overlay and Overlay-Controls :pray:
 
 ## Features
