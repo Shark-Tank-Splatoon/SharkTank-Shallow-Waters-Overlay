@@ -3,10 +3,11 @@ A [NodeCG](http://github.com/nodecg/nodecg) bundle, used for the Shark Tank Shal
 
 ## Install
 
-- Install [`ipl-overlay-controls.`](https://github.com/inkfarer/ipl-overlay-controls)
+- Install [`ipl-overlay-controls.`](https://github.com/inkfarer/ipl-overlay-controls) via [`NCGMGR`](https://github.com/IPLSplatoon/NCGMGR) (Look at their instructions)
 
-- Add more instructions later blehh
+- Inside of NCGMGR, press "```Add Bundle+```" then paste in: ```Shark-Tank-Splatoon/SharkTank-Shallow-Waters-Overlay```
 
+- Press Install :thumbsup:
 A very big thank you to IPL for creating and open-sourcing their Overlay and Overlay-Controls :pray:
 
 ## Features
@@ -41,10 +42,10 @@ A very big thank you to IPL for creating and open-sourcing their Overlay and Ove
 
 - ~~Replay scene? idk how the streamers do that one so 🤷~~
 
-- End Scene. Unsure how to do it so might not happen soon.
+- ~~End Scene. Unsure how to do it so might not happen soon.~~
 
 ## Future Plans
 
 - Rewrite all js to TypeScript
 - Make new overlays for our other events (Other Repo)
-- Switch from set images to html/js based containers for Team related stuff
+- Switch from set images to html/js based containers for everthing text related, requires redoing of graphics tho.
