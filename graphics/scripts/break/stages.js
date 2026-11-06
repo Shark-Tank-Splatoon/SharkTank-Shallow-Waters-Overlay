@@ -1,6 +1,6 @@
-const SET_OVER_IMAGE = 'img/8_extra/setover.png';
+const SET_OVER_IMAGE = 'img/8_extra/set-over.png';
 const SET_OVER_LABEL = 'Set is Over!';
-const COUNTER_PICK_IMAGE = 'img/4_bo3bo5/bo5/counter%20pick%20image.png';
+const COUNTER_PICK_IMAGE = 'img/4_bo3bo5/bo5/counter-pick-image.png';
 const COUNTER_PICK_LABEL = 'Counterpick!';
 const GAME_MODE_IMAGES = {
     'Clam Blitz': 'img/4_bo3bo5/stageicons/cb.png',
@@ -75,7 +75,7 @@ function setStageData(stage, game, round) {
     const winnerTeam = getStageWinnerTeam(game, round);
     const isCompleted = Boolean(winnerTeam);
     const winnerImage = winnerTeam?.showLogo ? winnerTeam.logoUrl : '';
-    const winnerImageUrl = winnerImage || (isCompleted ? '../../img/2_commbreak/pibble%20(MANDATORY).jpg' : '');
+    const winnerImageUrl = winnerImage || (isCompleted ? '../../img/2_commbreak/pibble-mandatory.jpg' : '');
     const stageImage = assetPaths?.value?.stageImages?.[game?.stage] || COUNTER_PICK_IMAGE;
     const gameModeImage = getGameModeImage(game);
 

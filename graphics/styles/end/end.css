@@ -30,7 +30,7 @@
 
 .end-background {
     z-index: 1;
-    background-image: url("../../img/7_final/SW%20final%20bg.png");
+    background-image: url("../../img/7_final/sw-final-bg.png");
 }
 
 .end-commentators {
@@ -102,7 +102,7 @@
 
 .end-elements {
     z-index: 3;
-    background-image: url("../../img/7_final/thank%20you%20elements.png");
+    background-image: url("../../img/7_final/thank-you-elements.png");
 }
 
 .end-winner-team {
@@ -136,5 +136,5 @@
     background-repeat: no-repeat;
     background-size: 1920px 1080px;
     pointer-events: none;
-    background-image: url("../../img/7_final/thank_you_pfp_overlay.png");
+    background-image: url("../../img/7_final/thank-you-pfp-overlay.png");
 }

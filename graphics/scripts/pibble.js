@@ -1,17 +1,25 @@
-PibbleModeEnabled.on('change', newValue => {
-    if (newValue) {
-        enablePibble();
-    } else {
-        disablePibble();
-    }
-});
+// Pibble mode glorp alert
+
+if (!pibbleImage) {
+    console.warn('[pibble] pibble-image element not found');
+}
 
 const pibbleImage = document.getElementById('pibble-image');
 
 function enablePibble() {
-    pibbleImage.hidden = false;
+    if (pibbleImage) pibbleImage.hidden = false;
 }
 
 function disablePibble() {
-    pibbleImage.hidden = true;
+    if (pibbleImage) pibbleImage.hidden = true;
+}
+
+if (PibbleModeEnabled && typeof PibbleModeEnabled.on === 'function') {
+    PibbleModeEnabled.on('change', newValue => {
+        if (newValue) {
+            enablePibble();
+        } else {
+            disablePibble();
+        }
+    });
 }

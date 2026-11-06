@@ -1,7 +1,12 @@
+// Homeland Edition overlay -> Toggled via dashboard
 const homelandImage = document.getElementById('homeland-image');
 
+if (!homeladnImage) {
+    console.warn('[homeland] homeland-image element not found');
+}
+
 function enableHomeland() {
-    homelandImage.hidden = false;
+    if (homelandImage) homelandImage.hidden = false;
 }
 
 function disableHomeland() {

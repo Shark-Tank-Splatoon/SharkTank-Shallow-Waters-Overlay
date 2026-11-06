@@ -5,7 +5,7 @@
     "compatibleGameVersions": [
         "SPLATOON_3"
     ],
-    "description": "",
+    "description": "NodeCG overlay for the Shark Tank Shallow Waters Splatoon 3 tournament",
     "author": {
         "name": "polonbear",
         "email": "polon@polonbear.com"
@@ -15,8 +15,10 @@
         "dashboard"
     ],
     "keywords": [
-        "",
-        "nodecg-bundle"
+        "nodecg-bundle",
+        "splatoon-3",
+        "broadcast-overlay",
+        "shark-tank"
     ],
     "nodecg": {
         "compatibleRange": "^1.7.0 || ^2.0.0",

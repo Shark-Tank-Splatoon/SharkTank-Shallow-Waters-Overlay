@@ -15,7 +15,7 @@
     width: 1920px;
     height: 1080px;
     pointer-events: none;
-    background: url("../../img/1_startingsoon/titlw.png") center / 1920px 1080px no-repeat;
+    background: url("../../img/1_startingsoon/title.png") center / 1920px 1080px no-repeat;
 }
 
 .scene.starting-soon > .scene-stuff > .swimming-shark {
@@ -25,7 +25,7 @@
     height: 576px;
     right: 200px;
     top: 100px;
-    background: url("../../img/1_startingsoon/updated%20spin.gif")
+    background: url("../../img/1_startingsoon/updated-spin.gif")
         center / 576px 576px no-repeat;
     pointer-events: none;
 }
@@ -43,5 +43,5 @@
     position: absolute;
     width: 1920px;
     height: 1080px;
-    background: url("../../img/1_startingsoon/SW%20title%20bg.png") center / 1920px 1080px no-repeat;
+    background: url("../../img/1_startingsoon/sw-title-bg.png") center / 1920px 1080px no-repeat;
 }

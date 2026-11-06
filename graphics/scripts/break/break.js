@@ -1,9 +1,8 @@
 function toggleExpandBackground(expanded) {
 	const pondBackground = document.querySelector('.pond-background');
 
-	if (pondBackground) {
+	if (!pondBackground) return;
 		gsap.set(pondBackground, { width: expanded ? '100%' : '1920px' });
-	}
 }
 
 function showInfoBar() {}
@@ -138,7 +137,7 @@ function setTeamLogo(selector, team = {}) {
 	const element = document.querySelector(selector);
 	if (!element) return;
 
-	const fallbackLogoUrl = 'img/2_commbreak/pibble%20(MANDATORY).jpg';
+	const fallbackLogoUrl = 'img/2_commbreak/pibble-mandatory.jpg';
 	const logoUrl = team?.showLogo && team?.logoUrl ? team.logoUrl : fallbackLogoUrl;
 	element.style.backgroundImage = `url("${logoUrl}")`;
 }

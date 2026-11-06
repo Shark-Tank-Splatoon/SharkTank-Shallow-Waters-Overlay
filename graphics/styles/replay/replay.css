@@ -21,23 +21,23 @@
     background-size: 100% 100%;
     width: 1920px;
     height: 1080px;
-    background-image: url("../../img/6_REPLAAYY/replay bg.png");
+    background-image: url("../../img/6_replay/replay-bg.png");
 }
 
 .replay-barry {
     z-index: 1;
     background-position: bottom left;
-    background-image: url("../../img/6_REPLAAYY/barry blink/barry blink gif.gif");
+    background-image: url("../../img/6_replay/barry-blink/barry-blink.gif");
 }
 
 .replay-henry {
     z-index: 1;
     background-position: calc(70%) bottom;
-    background-image: url("../../img/6_REPLAAYY/HENRY SLEEP/henry snooze.gif");
+    background-image: url("../../img/6_replay/henry-sleep/henry-snooze.gif");
 }
 
 .replay-wallace {
     z-index: 1;
     background-position: bottom right;
-    background-image: url("../../img/6_REPLAAYY/WALLACE SPARKLE/wallace sparkle gif.gif");
+    background-image: url("../../img/6_replay/wallace-sparkle/wallace-sparkle.gif");
 }
