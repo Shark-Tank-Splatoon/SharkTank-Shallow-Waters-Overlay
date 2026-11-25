@@ -30,6 +30,10 @@ function hideCommentator() {
     setSceneVisibility('.main-scene', false);
 }
 
+function hideStartingSoon() {
+    setSceneVisibility('.starting-soon', false);
+}
+
 function showScene(sceneSelector) {
     toggleExpandBackground(false);
     gsap.to(`${sceneSelector} > .scene-content`, {
@@ -71,6 +75,10 @@ function showStages() {
 
 function showCommentator() {
     showScene('.main-scene');
+}
+
+function showStartingSoon() {
+    showScene('.starting-soon');
 }
 
 let currentScene;

@@ -29,11 +29,6 @@
                 "height": 1080
             },
             {
-                "file": "start.html",
-                "width": 1920,
-                "height": 1080
-            },
-            {
                 "file": "ingame.html",
                 "width": 1920,
                 "height": 1080
@@ -79,7 +74,8 @@
     "dependencies": {
         "@tourneyview/renderer": "0.8.0",
         "fitted-text": "^1.0.0",
-        "gsap": "^3.13.0"
+        "gsap": "^3.13.0",
+        "ipl-overlay-controls": "^4.21.0"
     },
     "devDependencies": {
         "ts-nodecg": "^0.3.1"
