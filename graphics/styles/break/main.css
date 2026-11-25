@@ -47,7 +47,7 @@
     z-index: 2;
     width: 580px;
     height: 580px;
-    background-color: #b7e6f5;
+    background-color: var(--commentator-pfp-bg);
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
@@ -81,11 +81,11 @@
     gap: 0;
     align-items: flex-start;
     justify-content: center;
-    color: #f3ecee;
+    color: var(--text-card);
     font-size: 70px;
     font-weight: 700;
     text-align: left;
-    -webkit-text-stroke: 20px #0946d5;
+    -webkit-text-stroke: 20px var(--stroke-card);
     white-space: nowrap;
     paint-order: stroke fill;
     stroke-linejoin: round;
@@ -147,11 +147,11 @@
     z-index: 5;
     width: 1080px;
     transform: translateX(-50%);
-    color: #f3ecee;
+    color: var(--text-card);
     font-size: 36px;
     font-weight: 700;
     text-align: center;
-    -webkit-text-stroke: 20px #0946d5;
+    -webkit-text-stroke: 20px var(--stroke-card);
     white-space: nowrap;
     paint-order: stroke fill;
     stroke-linejoin: round;

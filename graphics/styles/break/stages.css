@@ -163,7 +163,7 @@
     flex-direction: column;
     justify-content: center;
     height: var(--stage-info-height);
-    color: #12343d;
+    color: var(--stage-info-text);
     text-align: left;
 }
 
@@ -209,9 +209,9 @@
     align-items: center;
     justify-content: center;
     transform: translate(var(--stage-label-offset-x), var(--stage-label-offset-y));
-    color: #ffff;
+    color: var(--text-light);
     /*white-space: nowrap;*/
-    -webkit-text-stroke: 13px #0c1e51;
+    -webkit-text-stroke: 13px var(--stroke-stage-label);
     paint-order: stroke fill;
     stroke-linejoin: round;
     text-align: center;
@@ -297,7 +297,7 @@
     width: 1000px;
     height: 175px;
     transform: translateX(-50%);
-    color: #000000;
+    color: var(--text-dark);
     text-align: center;
     pointer-events: none;
 }
@@ -315,8 +315,8 @@
     margin: 0;
     overflow: hidden;
     text-overflow: ellipsis;
-    color: #ffff;
-    -webkit-text-stroke: 13px #051b50;
+    color: var(--text-light);
+    -webkit-text-stroke: 13px var(--stroke-main);
     white-space: nowrap;
     paint-order: stroke fill;
     stroke-linejoin: round;
@@ -347,11 +347,11 @@
     z-index: 8;
     width: 960px;
     transform: translateX(-50%);
-    color: #ffffff;
+    color: var(--text-light);
     font-size: 50px;
     font-weight: 600;
     text-align: center;
-    -webkit-text-stroke: 12px #051b50;
+    -webkit-text-stroke: 12px var(--stroke-main);
     white-space: nowrap;
     paint-order: stroke fill;
     stroke-linejoin: round;

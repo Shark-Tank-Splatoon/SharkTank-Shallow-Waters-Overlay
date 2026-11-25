@@ -40,16 +40,16 @@
   background-image: url("../../img/3_rostersscreen/sw-rosters-bg.png");
 }
 
+/* The roster elements (pills, cards, splash, commentator bar) are drawn in rosters-ui.css */
 .scene.teams-scene > .scene-content > .teams-background > .teams-roster {
   z-index: 2;
-  background-image: url("../../img/3_rostersscreen/rosters-elements-updated.png");
 }
 
 .scene.teams-scene > .scene-content > .active-round-info {
   position: absolute;
   inset: 0;
   z-index: 3;
-  color: #fff;
+  color: var(--text-light);
   text-shadow: 0 2px 4px #000;
   pointer-events: none;
 }
@@ -87,10 +87,10 @@
   min-width: 0;
   padding: 0 24px;
   font-size: 60px;
-  color: #ffffff;
+  color: var(--text-light);
   font-weight: 700;
   letter-spacing: 0.02em;
-  -webkit-text-stroke: 13px #051b50;
+  -webkit-text-stroke: 13px var(--stroke-main);
   white-space: nowrap;
   paint-order: stroke fill;
   stroke-linejoin: round;
@@ -156,7 +156,7 @@
   transform: translateX(-50%);
   font-size: 90px;
   font-weight: 600;
-  color: #000000;
+  color: var(--text-dark);
   text-align: center;
   text-shadow: none;
 }
@@ -167,11 +167,11 @@
   left: 52%;
   width: 960px;
   transform: translateX(-50%);
-  color: #ffffff;
+  color: var(--text-light);
   font-size: 50px;
   font-weight: 600;
   text-align: left;
-  -webkit-text-stroke: 12px #051b50;
+  -webkit-text-stroke: 12px var(--stroke-main);
   white-space: nowrap;
   paint-order: stroke fill;
   stroke-linejoin: round;

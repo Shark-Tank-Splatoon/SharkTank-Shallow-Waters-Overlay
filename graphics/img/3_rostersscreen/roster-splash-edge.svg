@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600">
+  <!--
+    Rosters screen: light blue splash behind the round format (Bo3, PA3 ...), plus the droplets.
+    Used as a mask in styles/break/rosters-ui.css, so only the shape matters here.
+    The colour comes from the "Splash outline and droplets" colour in the Look & Feel panel, not from this file.
+    Edit visually in Inkscape, Figma or Boxy SVG and keep the 960 x 600 canvas.
+  -->
+  <g fill="#000">
+    <path d="M35 190C40 90 110 30 210 28C300 28 370 70 440 125L860 250C905 300 930 380 925 440C920 500 880 535 820 530C780 527 735 512 690 492L300 480L150 420C90 330 40 290 35 190Z"/>
+    <ellipse cx="837" cy="67" rx="12" ry="10"/>
+    <ellipse cx="890" cy="80" rx="22" ry="24" transform="rotate(-30 890 80)"/>
+    <circle cx="330" cy="533" r="28"/>
+    <ellipse cx="273" cy="556" rx="11" ry="16" transform="rotate(20 273 556)"/>
+  </g>
+</svg>

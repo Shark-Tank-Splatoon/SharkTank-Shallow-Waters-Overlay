@@ -65,6 +65,14 @@
                 "file": "end-scene-commentators/end-scene-commentators.html",
                 "workspace": "sharktank",
                 "headerColor": "#1E90FF"
+            },
+            {
+                "name": "ThemeSettings",
+                "title": "Look & Feel (Colours & Sizes)",
+                "width": 3,
+                "file": "theme-settings/theme-settings.html",
+                "workspace": "sharktank",
+                "headerColor": "#1E90FF"
             }
         ]
     },

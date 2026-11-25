@@ -15,9 +15,9 @@
     z-index: 1;
     width: 730px;
     transform: translateX(-50%);
-    font-size: 50px;
+    font-size: var(--ingame-commentator-size);
     font-weight: 600;
-    color: white;
+    color: var(--ingame-commentator-color);
     text-align: center;
     white-space: nowrap;
     overflow: hidden;
@@ -62,8 +62,8 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #fff;
-  font-size: 42px;
+  color: var(--ingame-funfact-color);
+  font-size: var(--ingame-funfact-size);
   font-weight: 600;
   line-height: 1.15;
   text-align: center;
@@ -89,8 +89,8 @@
   display: flex;
   align-items: center;
   min-width: 0;
-  color: #000000;
-  font-size: 55px;
+  color: var(--ingame-team-name-color);
+  font-size: var(--ingame-team-name-size);
   font-weight: 700;
   letter-spacing: 0.02em;
   text-align: left;
@@ -118,24 +118,24 @@
 }
 
 .scene > .scene-stuff > .active-round-info > .active-round-teams > .active-round-team-a {
-  --active-round-score-font-size: 45px;
+  --active-round-score-font-size: var(--ingame-score-size);
   --active-round-score-left: 59px;
   --active-round-score-bottom: 2px;
   --active-round-score-color: inherit;
   --active-round-score-stroke-width: 5px;
-  --active-round-score-stroke-color: #7a520e;
+  --active-round-score-stroke-color: var(--score-stroke-a);
   --active-round-score-white-space: nowrap;
   --active-round-score-paint-order: stroke fill;
   --active-round-score-stroke-linejoin: round;
 }
 
 .scene > .scene-stuff > .active-round-info > .active-round-teams > .active-round-team-b {
-  --active-round-score-font-size: 45px;
+  --active-round-score-font-size: var(--ingame-score-size);
   --active-round-score-left: 59px;
   --active-round-score-bottom: 2px;
   --active-round-score-color: inherit;
   --active-round-score-stroke-width: 5px;
-  --active-round-score-stroke-color: #5d96f6;
+  --active-round-score-stroke-color: var(--score-stroke-b);
   --active-round-score-white-space: nowrap;
   --active-round-score-paint-order: stroke fill;
   --active-round-score-stroke-linejoin: round;

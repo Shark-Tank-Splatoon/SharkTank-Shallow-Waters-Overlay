@@ -7,10 +7,12 @@
 <head>
     <meta charset="UTF-8">
     <!-- Here is were u link the stylesheets -->
+    <link rel="stylesheet" href="styles/theme.css">
     <link rel="stylesheet" href="styles/globals.css">
     <link rel="stylesheet" href="styles/break/break.css">
     <link rel="stylesheet" href="styles/break/main.css">
     <link rel="stylesheet" href="styles/break/teams.css">
+    <link rel="stylesheet" href="styles/break/rosters-ui.css">
     <link rel="stylesheet" href="styles/break/stages.css">
 </head>
 
@@ -52,7 +54,19 @@
     <div class="scene-content">
         <div class="teams-background">
             <div class="teams-background-image"></div>
-            <div class="teams-roster"></div>
+            <div class="teams-roster">
+                <div class="roster-pill roster-pill-a"></div>
+                <div class="roster-pill roster-pill-b"></div>
+                <div class="roster-splash">
+                    <div class="roster-splash-edge"></div>
+                    <div class="roster-splash-fill"></div>
+                </div>
+                <div class="roster-card roster-card-a"></div>
+                <div class="roster-card roster-card-b"></div>
+                <div class="roster-comm-bar">
+                    <div class="roster-mic"></div>
+                </div>
+            </div>
             <div class="active-round-team-a-logo" data-active-round-team-a-logo></div>
             <div class="active-round-team-b-logo" data-active-round-team-b-logo></div>
         </div>
@@ -164,6 +178,7 @@
 
 <!-- Here is where u link the scripts -->
 <script src="../node_modules/gsap/dist/gsap.min.js"></script>
+<script src="scripts/theme.js"></script>
 <script src="scripts/globals.js"></script>
 <script src="scripts/replicants.js"></script>
 <script src="scripts/break/break.js"></script>

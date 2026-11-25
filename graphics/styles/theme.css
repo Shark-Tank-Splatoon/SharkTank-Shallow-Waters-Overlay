@@ -1,0 +1,53 @@
+/*
+    Theme defaults
+
+    Every value the team can change from the "Look & Feel" dashboard panel lives here.
+    The panel stores its changes in the "ThemeOverrides" replicant and scripts/theme.js applies them
+    on top of these defaults, so nobody has to edit CSS to change a colour or a text size.
+
+    To make another value editable:
+      1. Use var(--your-name) in the scene's CSS instead of the hardcoded value.
+      2. Add the default below.
+      3. Add a matching entry to FIELDS in dashboard/theme-settings/theme-settings.js (same name, same default).
+*/
+
+:root {
+    /* Break, starting-soon and end screens: text */
+    --text-light: #ffffff;
+    --text-dark: #000000;
+    --text-card: #f3ecee;
+    --stage-info-text: #12343d;
+
+    /* Break and end screens: outlines around text */
+    --stroke-main: #051b50;
+    --stroke-card: #0946d5;
+    --stroke-stage-label: #0c1e51;
+    --stroke-light: #ffffff;
+
+    /* Backgrounds */
+    --commentator-pfp-bg: #b7e6f5;
+    --end-bg: #03135b;
+
+    /* Rosters screen (pills, cards, splash, commentator bar) */
+    --roster-pill-fill: #22baf2;
+    --roster-pill-line: #5fd9f8;
+    --roster-ring: #aae8f5;
+    --roster-card-fill: #022e87;
+    --roster-card-edge: #001050;
+    --roster-card-line: #0b468f;
+    --roster-blob-fill: #f3ecee;
+    --roster-blob-edge: #58caf1;
+
+    /* In-game scene: colours */
+    --ingame-team-name-color: #000000;
+    --ingame-commentator-color: #ffffff;
+    --ingame-funfact-color: #ffffff;
+    --score-stroke-a: #7a520e;
+    --score-stroke-b: #5d96f6;
+
+    /* In-game scene: text sizes */
+    --ingame-team-name-size: 55px;
+    --ingame-score-size: 45px;
+    --ingame-commentator-size: 50px;
+    --ingame-funfact-size: 42px;
+}

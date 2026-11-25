@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 600" width="960" height="600">
+  <!--
+    Rosters screen: off-white splash the round format (Bo3, PA3 ...) sits on.
+    Used as a mask in styles/break/rosters-ui.css, so only the shape matters here.
+    The colour comes from the "Splash in the middle" colour in the Look & Feel panel, not from this file.
+    Keep the same 960 x 600 canvas as roster-splash-edge.svg so the two line up.
+  -->
+  <path fill="#000" d="M128 97C220 92 330 108 430 115C560 120 700 98 810 104C860 108 890 135 887 180C884 230 862 270 868 330C872 380 884 400 880 440C876 480 840 497 780 495C700 492 600 482 480 485C380 487 270 500 190 502C120 504 85 475 90 430C94 390 98 350 95 300C90 260 72 220 70 175C70 120 90 100 128 97Z"/>
+</svg>

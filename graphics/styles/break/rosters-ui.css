@@ -1,0 +1,145 @@
+/*
+    Rosters screen elements, built with CSS and SVG instead of rosters-elements-updated.png.
+
+    Everything here lives inside .teams-roster, so the fade-in from sceneSwitcher.js still applies.
+    Colours come from the variables in styles/theme.css, so they can be changed from the "Look & Feel" dashboard panel.
+
+    Shapes that are not simple boxes live in their own files and are used as masks, so they take the colour of a variable:
+      img/textures/caustics.png              water-light pattern on the bars and card borders
+      img/3_rostersscreen/roster-splash-*.svg splash behind the round format
+      img/3_rostersscreen/roster-mic.svg      microphone icon in the commentator bar
+    To change a shape, edit its SVG file. The colour in the SVG file does not matter.
+*/
+
+.scene.teams-scene > .scene-content > .teams-background > .teams-roster > * {
+    position: absolute;
+}
+
+/* ---------- Team name pills (top left and right) ---------- */
+.roster-pill {
+    top: 56px;
+    width: 707px;
+    height: 96px;
+    border-radius: 35px;            /* rounded rectangle, not a full pill; all corners here are 35px like the artwork */
+    background: var(--roster-pill-fill);
+}
+
+.roster-pill-a { left: 80px; }
+.roster-pill-b { left: 1134px; }
+
+/* Water lines on the pill */
+.roster-pill::before,
+.roster-comm-bar::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--roster-pill-line);
+    -webkit-mask: url("../../img/textures/caustics.png") 0 0 / 720px 360px repeat;
+    mask: url("../../img/textures/caustics.png") 0 0 / 720px 360px repeat;
+}
+
+.roster-pill-b::before { -webkit-mask-position: -260px -90px; mask-position: -260px -90px; }
+
+/* Light outline, shifted a little so it looks layered */
+.roster-pill::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    box-sizing: border-box;
+    border: 9px solid var(--roster-ring);
+    border-radius: inherit;
+}
+
+.roster-pill-a::after { transform: translate(-25px, 7px); }
+.roster-pill-b::after { transform: translate(25px, 7px); }
+
+/* ---------- Splash behind the round format (Bo3, PA3 ...) ---------- */
+.roster-splash {
+    left: 800px;
+    top: 8px;
+    width: 320px;
+    height: 200px;
+}
+
+.roster-splash-edge,
+.roster-splash-fill {
+    position: absolute;
+    inset: 0;
+}
+
+.roster-splash-edge {
+    background: var(--roster-blob-edge);
+    -webkit-mask: url("../../img/3_rostersscreen/roster-splash-edge.svg") 0 0 / 100% 100% no-repeat;
+    mask: url("../../img/3_rostersscreen/roster-splash-edge.svg") 0 0 / 100% 100% no-repeat;
+}
+
+.roster-splash-fill {
+    background: var(--roster-blob-fill);
+    -webkit-mask: url("../../img/3_rostersscreen/roster-splash-fill.svg") 0 0 / 100% 100% no-repeat;
+    mask: url("../../img/3_rostersscreen/roster-splash-fill.svg") 0 0 / 100% 100% no-repeat;
+}
+
+/* ---------- Roster cards ---------- */
+.roster-card {
+    top: 216px;
+    width: 559px;
+    height: 647px;
+    box-sizing: border-box;
+    border-radius: 35px;
+    background: var(--roster-card-edge);
+}
+
+.roster-card-a { left: 108px; }
+.roster-card-b { left: 1254px; }
+
+/* Water lines in the dark border */
+.roster-card::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    background: var(--roster-card-line);
+    -webkit-mask: url("../../img/textures/caustics.png") 0 0 / 720px 360px repeat;
+    mask: url("../../img/textures/caustics.png") 0 0 / 720px 360px repeat;
+}
+
+.roster-card-b::before { -webkit-mask-position: -300px -120px; mask-position: -300px -120px; }
+
+/* The flat inner panel the player names sit on */
+.roster-card::after {
+    content: "";
+    position: absolute;
+    inset: 15px;
+    border-radius: 20px;            /* 35px outer corner minus the 15px border */
+    background: var(--roster-card-fill);
+}
+
+/* ---------- Commentator bar (bottom) ---------- */
+.roster-comm-bar {
+    left: 433px;
+    top: 929px;
+    width: 1054px;
+    height: 110px;
+    box-sizing: border-box;
+    border: 10px solid var(--roster-ring);
+    border-radius: 35px;
+    background: var(--roster-pill-fill);
+}
+
+.roster-comm-bar::before {
+    border-radius: 25px;            /* 35px outer corner minus the 10px outline */
+    -webkit-mask-position: -120px -40px;
+    mask-position: -120px -40px;
+}
+
+.roster-mic {
+    position: absolute;
+    left: 21px;
+    top: 21px;
+    width: 36px;
+    height: 50px;
+    background: var(--roster-blob-fill);
+    -webkit-mask: url("../../img/3_rostersscreen/roster-mic.svg") 0 0 / 100% 100% no-repeat;
+    mask: url("../../img/3_rostersscreen/roster-mic.svg") 0 0 / 100% 100% no-repeat;
+}
