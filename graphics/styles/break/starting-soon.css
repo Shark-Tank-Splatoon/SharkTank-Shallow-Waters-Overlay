@@ -32,7 +32,7 @@
 
 #homeland-image {
     position: fixed;
-    z-index: 3;
+    z-index: 5;
     inset: 0;
     width: 1920px;
     height: 1080px;

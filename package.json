@@ -69,13 +69,16 @@
                 "workspace": "sharktank",
                 "headerColor": "#1E90FF"
             }
-        ]
+        ],
+        "bundleDependencies": {
+            "ipl-overlay-controls": "^4.21.0"
+        }
     },
     "dependencies": {
+        "@iplsplatoon/vue-components": "^3.12.0",
         "@tourneyview/renderer": "0.8.0",
         "fitted-text": "^1.0.0",
-        "gsap": "^3.13.0",
-        "ipl-overlay-controls": "^4.21.0"
+        "gsap": "^3.13.0"
     },
     "devDependencies": {
         "ts-nodecg": "^0.3.1"
