@@ -26,10 +26,6 @@ function hideStages() {
     setSceneVisibility('.stages-scene', false);
 }
 
-function hideCommentator() {
-    setSceneVisibility('.main-scene', false);
-}
-
 function hideStartingSoon() {
     setSceneVisibility('.starting-soon', false);
 }
@@ -44,7 +40,15 @@ function showScene(sceneSelector) {
 }
 
 function showMainScene() {
-    showScene('.main-scene');
+    toggleExpandBackground(false);
+    gsap.set('.main-scene > .scene-content', {
+        x: 0,
+        opacity: 0
+    });
+    gsap.to('.main-scene > .scene-content', {
+        opacity: 1,
+        duration: 0.5
+    });
 }
 
 function showTeams() {
@@ -71,10 +75,6 @@ function showStages() {
         opacity: 1,
         duration: 0.5
     });
-}
-
-function showCommentator() {
-    showScene('.main-scene');
 }
 
 function showStartingSoon() {
@@ -108,13 +108,53 @@ function syncBubbleLoops(scene) {
     });
 }
 
-let currentScene;
+const TRANSITION_SWAP_AT = 0.6;
 
-function updateScene(newValue, oldValue) {
-    if (newValue === currentScene) return;
+function playTransition(onCovered, onDone) {
+    const video = document.getElementById('transition');
+    let swapped = false;
+    let swapTimer;
+    const swap = () => {
+        if (swapped) return;
+        swapped = true;
+        onCovered();
+    };
+    const finish = () => {
+        clearTimeout(swapTimer);
+        swap();
+        if (video) video.style.visibility = 'hidden';
+        onDone();
+    };
 
-    currentScene = newValue;
+    if (!video) {
+        finish();
+        return;
+    }
 
+    const start = () => {
+        swapTimer = setTimeout(swap, TRANSITION_SWAP_AT * 1000);
+    };
+
+    video.pause();
+    video.currentTime = 0;
+    video.muted = false;
+    video.style.visibility = 'visible';
+    video.addEventListener('ended', finish, { once: true });
+
+    video.play()
+        .then(start)
+        .catch(() => {
+            // Sound blocked (e.g. a normal browser tab): retry muted
+            video.muted = true;
+            return video.play().then(start);
+        })
+        .catch(() => {
+            video.removeEventListener('ended', finish);
+            finish();
+        });
+}
+
+function applyScene(newValue, oldValue) {
     if (!oldValue) {
         hideMainScene();
         hideTeams();
@@ -123,7 +163,7 @@ function updateScene(newValue, oldValue) {
     } else {
         switch (oldValue) {
             case 'main':
-                hideCommentator();
+                hideMainScene();
                 break;
             case 'teams':
                 hideTeams();
@@ -141,7 +181,7 @@ function updateScene(newValue, oldValue) {
         case 'main':
             hideInfoBar();
             setInfoSwitchAnim();
-            showCommentator();
+            showMainScene();
             break;
         case 'teams':
             showInfoBar();
@@ -158,6 +198,39 @@ function updateScene(newValue, oldValue) {
     }
 
     syncBubbleLoops(newValue);
+}
+
+let currentScene;
+let isTransitioning = false;
+let queuedScene = null;
+
+function updateScene(newValue) {
+    if (currentScene === undefined) {
+        currentScene = newValue;
+        applyScene(newValue, null);
+        return;
+    }
+
+    if (isTransitioning) {
+        queuedScene = newValue;
+        return;
+    }
+
+    if (newValue === currentScene) return;
+
+    const fromScene = currentScene;
+    currentScene = newValue;
+    isTransitioning = true;
+
+    playTransition(
+        () => applyScene(newValue, fromScene),
+        () => {
+            isTransitioning = false;
+            const next = queuedScene;
+            queuedScene = null;
+            if (next && next !== currentScene) updateScene(next);
+        }
+    );
 }
 
 if (activeBreakScene && typeof activeBreakScene.on === 'function') {
