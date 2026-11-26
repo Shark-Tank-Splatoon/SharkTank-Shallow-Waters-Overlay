@@ -81,7 +81,9 @@
         "gsap": "^3.13.0"
     },
     "devDependencies": {
-        "ts-nodecg": "^0.3.1"
+        "@vitejs/plugin-vue": "^6.0.11",
+        "ts-nodecg": "^0.3.1",
+        "vite": "^8.3.8"
     },
     "repository": "https://github.com/nodecg/nodecg.git",
     "license": "MIT"

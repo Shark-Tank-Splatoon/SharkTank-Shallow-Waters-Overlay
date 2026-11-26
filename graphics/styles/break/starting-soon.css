@@ -3,12 +3,12 @@
     inset: 0;
 }
 
-.scene.starting-soon > .scene-stuff {
+.scene.starting-soon > .scene-content {
     position: absolute;
     inset: 0;
 }
 
-.scene.starting-soon > .scene-stuff > .title {
+.scene.starting-soon > .scene-content > .title {
     position: absolute;
     z-index: 2;
     inset: 0;
@@ -18,7 +18,7 @@
     background: url("../../img/1_startingsoon/title.png") center / 1920px 1080px no-repeat;
 }
 
-.scene.starting-soon > .scene-stuff > .swimming-shark {
+.scene.starting-soon > .scene-content > .swimming-shark {
     position: absolute;
     z-index: 4;
     width: 576px;
@@ -30,7 +30,7 @@
     pointer-events: none;
 }
 
-#homeland-image {
+.scene.starting-soon > .scene-content > #homeland-image {
     position: fixed;
     z-index: 5;
     inset: 0;

@@ -78,7 +78,15 @@ function showCommentator() {
 }
 
 function showStartingSoon() {
-    showScene('.starting-soon');
+    toggleExpandBackground(false);
+    gsap.set('.starting-soon > .scene-content', {
+        x: 0,
+        opacity: 0
+    });
+    gsap.to('.starting-soon > .scene-content', {
+        opacity: 1,
+        duration: 0.5
+    });
 }
 
 let currentScene;
@@ -92,6 +100,7 @@ function updateScene(newValue, oldValue) {
         hideMainScene();
         hideTeams();
         hideStages();
+        hideStartingSoon();
     } else {
         switch (oldValue) {
             case 'main':
@@ -103,6 +112,8 @@ function updateScene(newValue, oldValue) {
             case 'stages':
                 hideStages();
                 break;
+            case 'starting-soon':
+                hideStartingSoon();
             default:
         }
     }
@@ -120,6 +131,9 @@ function updateScene(newValue, oldValue) {
         case 'stages':
             showInfoBar();
             showStages();
+            break;
+        case 'starting-soon':
+            showStartingSoon();
             break;
         default:
     }
