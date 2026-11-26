@@ -89,6 +89,25 @@ function showStartingSoon() {
     });
 }
 
+const SCENE_SELECTORS = {
+    'main': '.main-scene',
+    'teams': '.teams-scene',
+    'stages': '.stages-scene',
+    'starting-soon': '.starting-soon'
+};
+
+function syncBubbleLoops(scene) {
+    const activeScene = document.querySelector(SCENE_SELECTORS[scene]);
+
+    document.querySelectorAll('.bubble-loop').forEach(video => {
+        if (activeScene && activeScene.contains(video)) {
+            video.play().catch(() => {});
+        } else {
+            video.pause();
+        }
+    });
+}
+
 let currentScene;
 
 function updateScene(newValue, oldValue) {
@@ -137,6 +156,8 @@ function updateScene(newValue, oldValue) {
             break;
         default:
     }
+
+    syncBubbleLoops(newValue);
 }
 
 if (activeBreakScene && typeof activeBreakScene.on === 'function') {
