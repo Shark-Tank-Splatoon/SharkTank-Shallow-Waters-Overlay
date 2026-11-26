@@ -20,6 +20,9 @@
         "broadcast-overlay",
         "shark-tank"
     ],
+    "scripts": {
+        "build:dashboard": "vite build"
+    },
     "nodecg": {
         "compatibleRange": "^1.7.0 || ^2.0.0",
         "graphics": [
@@ -49,7 +52,7 @@
                 "name": "SharkTankSettings",
                 "title": "Shark Tank Settings",
                 "width": 2,
-                "file": "sharktankdashboard.html",
+                "file": "dist/sharktankdashboard.html",
                 "workspace": "sharktank",
                 "headerColor": "#1E90FF"
             },

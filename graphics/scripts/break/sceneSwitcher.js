@@ -173,6 +173,7 @@ function applyScene(newValue, oldValue) {
                 break;
             case 'starting-soon':
                 hideStartingSoon();
+                break;
             default:
         }
     }

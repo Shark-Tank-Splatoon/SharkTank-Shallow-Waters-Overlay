@@ -70,37 +70,3 @@ body {
     outline: 2px solid var(--accent);
     outline-offset: 1px;
 }
-
-.fun-fact-switch {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px;
-    margin-top: 8px;
-}
-
-.fun-fact-switch button {
-    min-height: 38px;
-    border: 0;
-    border-radius: 4px;
-    background: var(--input-bg);
-    color: var(--muted-text);
-    cursor: pointer;
-    font: inherit;
-    font-weight: 700;
-}
-
-.fun-fact-switch button:hover,
-.fun-fact-switch button[aria-pressed="true"] {
-    background: var(--accent);
-    color: #fff;
-}
-
-.fun-fact-switch button:first-child:hover,
-.fun-fact-switch button:first-child[aria-pressed="true"] {
-    background: var(--show-hover);
-}
-
-.fun-fact-switch button:focus-visible {
-    outline: 2px solid #fff;
-    outline-offset: 2px;
-}

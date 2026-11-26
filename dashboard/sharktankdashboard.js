@@ -60,20 +60,6 @@ function updateFunFactControls(data = {}) {
     if (FunFactHide) FunFactHide.setAttribute('aria-pressed', String(!isVisible));
 }
 
-if (FunFactText) {
-    FunFactText.addEventListener('input', event => {
-        updateFunFact({text: event.target.value});
-    });
-}
-
-if (FunFactShow) {
-    FunFactShow.addEventListener('click', () => updateFunFact({isVisible: true}));
-}
-
-if (FunFactHide) {
-    FunFactHide.addEventListener('click', () => updateFunFact({isVisible: false}));
-}
-
 if (FunFactData && typeof FunFactData.on === 'function') {
     FunFactData.on('change', updateFunFactControls);
     updateFunFactControls(FunFactData.value);
