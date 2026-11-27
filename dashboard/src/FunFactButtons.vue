@@ -42,7 +42,7 @@ async function funFactTimer(){
         <ipl-textarea
             v-model="funFactText"
             name="funFactText"
-            placeholder="Placeholder"
+            placeholder="Did you know..."
             label="Text"
             :disabled="isVisible"
         />
