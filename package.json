@@ -21,7 +21,8 @@
         "shark-tank"
     ],
     "scripts": {
-        "build:dashboard": "vite build"
+        "build": "vite build",
+        "watch": "vite build --watch"
     },
     "nodecg": {
         "compatibleRange": "^1.7.0 || ^2.0.0",
